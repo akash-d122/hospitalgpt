@@ -170,7 +170,7 @@ class FHIRQueryHelper:
             'patient_url': f"{FHIRQueryHelper.BASE_URL}/Patient/{patient['id']}?_pretty=true"
         }
 
-def openrouter_chat(messages: List[Dict[str, str]], model: str = "qwen/qwen3-30b-a3b:free") -> str:
+def openrouter_chat(messages: List[Dict[str, str]], model: str = "qwen/qwen3-235b-a22b:free") -> str:
     """
     Make a direct API call to OpenRouter chat completions.
     
