@@ -1,0 +1,42 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1001",
+        "identifier": [{"type": {"text": "Medical Record Number"}, "value": "IN-1001"}],
+        "name": [{"use": "official", "family": "Sharma", "given": ["Amit"]}],
+        "telecom": [{"system": "email", "value": "amit.sharma@example.in", "use": "home"}],
+        "gender": "male",
+        "birthDate": "1965-03-15",
+        "address": [{"use": "home", "postalCode": "110001", "country": "IN"}],
+        "maritalStatus": {"coding": [{"code": "M", "display": "Married"}]},
+        "extension": [
+          {"url": "http://example.com/fhir/StructureDefinition/blood-pressure", "valueString": "180/110"},
+          {"url": "http://example.com/fhir/StructureDefinition/last-visit", "valueDate": "2024-03-01"},
+          {"url": "http://example.com/fhir/StructureDefinition/chronic-conditions", "valueString": "diabetes,hypertension,heart-disease"}
+        ]
+      }
+    },
+    {"resource": {"resourceType": "Condition", "id": "cond-1001-1", "subject": {"reference": "Patient/1001"}, "code": {"coding": [{"display": "Diabetes mellitus type 2 (disorder)", "severity": "severe"}]}, "onsetDateTime": "2010-01-01", "clinicalStatus": {"coding": [{"code": "active", "display": "Active"}]}}},
+    {"resource": {"resourceType": "Condition", "id": "cond-1001-2", "subject": {"reference": "Patient/1001"}, "code": {"coding": [{"display": "Hypertensive disorder (disorder)", "severity": "severe"}]}, "onsetDateTime": "2012-06-15", "clinicalStatus": {"coding": [{"code": "active", "display": "Active"}]}}},
+    {"resource": {"resourceType": "Condition", "id": "cond-1001-3", "subject": {"reference": "Patient/1001"}, "code": {"coding": [{"display": "Coronary heart disease (disorder)", "severity": "severe"}]}, "onsetDateTime": "2018-05-15", "clinicalStatus": {"coding": [{"code": "active", "display": "Active"}]}}},
+
+    {"resource": {"resourceType": "Patient", "id": "1002", "identifier": [{"type": {"text": "Medical Record Number"}, "value": "IN-1002"}], "name": [{"use": "official", "family": "Rao", "given": ["Priya"]}], "telecom": [{"system": "email", "value": "priya.rao@example.in", "use": "home"}], "gender": "female", "birthDate": "1978-07-22", "address": [{"use": "home", "postalCode": "560001", "country": "IN"}], "maritalStatus": {"coding": [{"code": "M", "display": "Married"}]}, "extension": [ {"url": "http://example.com/fhir/StructureDefinition/blood-pressure", "valueString": "145/90"}, {"url": "http://example.com/fhir/StructureDefinition/last-visit", "valueDate": "2024-02-10"}, {"url": "http://example.com/fhir/StructureDefinition/chronic-conditions", "valueString": "hypertension,thyroid-disorder"} ]}},
+    {"resource": {"resourceType": "Condition", "id": "cond-1002-1", "subject": {"reference": "Patient/1002"}, "code": {"coding": [{"display": "Hypertensive disorder (disorder)", "severity": "moderate"}]}, "onsetDateTime": "2018-08-01", "clinicalStatus": {"coding": [{"code": "active", "display": "Active"}]}}},
+    {"resource": {"resourceType": "Condition", "id": "cond-1002-2", "subject": {"reference": "Patient/1002"}, "code": {"coding": [{"display": "Thyroid disorder (disorder)", "severity": "mild"}]}, "onsetDateTime": "2020-03-10", "clinicalStatus": {"coding": [{"code": "active", "display": "Active"}]}}},
+
+    {"resource": {"resourceType": "Patient", "id": "1003", "identifier": [{"type": {"text": "Medical Record Number"}, "value": "IN-1003"}], "name": [{"use": "official", "family": "Patel", "given": ["Rakesh"]}], "telecom": [{"system": "email", "value": "rakesh.patel@example.in", "use": "home"}], "gender": "male", "birthDate": "1985-11-10", "address": [{"use": "home", "postalCode": "400001", "country": "IN"}], "maritalStatus": {"coding": [{"code": "S", "display": "Single"}]}, "extension": [ {"url": "http://example.com/fhir/StructureDefinition/blood-pressure", "valueString": "120/80"}, {"url": "http://example.com/fhir/StructureDefinition/last-visit", "valueDate": "2024-01-20"}, {"url": "http://example.com/fhir/StructureDefinition/chronic-conditions", "valueString": "none"} ]}},
+
+    {"resource": {"resourceType": "Patient", "id": "1004", "identifier": [{"type": {"text": "Medical Record Number"}, "value": "IN-1004"}], "name": [{"use": "official", "family": "Kaur", "given": ["Simran"]}], "telecom": [{"system": "email", "value": "simran.kaur@example.in", "use": "home"}], "gender": "female", "birthDate": "1992-04-05", "address": [{"use": "home", "postalCode": "160017", "country": "IN"}], "maritalStatus": {"coding": [{"code": "S", "display": "Single"}]}, "extension": [ {"url": "http://example.com/fhir/StructureDefinition/blood-pressure", "valueString": "130/85"}, {"url": "http://example.com/fhir/StructureDefinition/last-visit", "valueDate": "2024-03-10"}, {"url": "http://example.com/fhir/StructureDefinition/chronic-conditions", "valueString": "asthma"} ]}},
+    {"resource": {"resourceType": "Condition", "id": "cond-1004-1", "subject": {"reference": "Patient/1004"}, "code": {"coding": [{"display": "Asthma (disorder)", "severity": "mild"}]}, "onsetDateTime": "2015-09-01", "clinicalStatus": {"coding": [{"code": "active", "display": "Active"}]}}},
+
+    {"resource": {"resourceType": "Patient", "id": "1005", "identifier": [{"type": {"text": "Medical Record Number"}, "value": "IN-1005"}], "name": [{"use": "official", "family": "Nair", "given": ["Anjali"]}], "telecom": [{"system": "email", "value": "anjali.nair@example.in", "use": "home"}], "gender": "female", "birthDate": "1970-12-30", "address": [{"use": "home", "postalCode": "682001", "country": "IN"}], "maritalStatus": {"coding": [{"code": "W", "display": "Widowed"}]}, "extension": [ {"url": "http://example.com/fhir/StructureDefinition/blood-pressure", "valueString": "155/95"}, {"url": "http://example.com/fhir/StructureDefinition/last-visit", "valueDate": "2024-02-25"}, {"url": "http://example.com/fhir/StructureDefinition/chronic-conditions", "valueString": "hypertension,diabetes"} ]}},
+    {"resource": {"resourceType": "Condition", "id": "cond-1005-1", "subject": {"reference": "Patient/1005"}, "code": {"coding": [{"display": "Hypertensive disorder (disorder)", "severity": "moderate"}]}, "onsetDateTime": "2016-04-01", "clinicalStatus": {"coding": [{"code": "active", "display": "Active"}]}}},
+    {"resource": {"resourceType": "Condition", "id": "cond-1005-2", "subject": {"reference": "Patient/1005"}, "code": {"coding": [{"display": "Diabetes mellitus type 2 (disorder)", "severity": "moderate"}]}, "onsetDateTime": "2017-07-15", "clinicalStatus": {"coding": [{"code": "active", "display": "Active"}]}}},
+
+    {"resource": {"resourceType": "Patient", "id": "1006", "identifier": [{"type": {"text": "Medical Record Number"}, "value": "IN-1006"}], "name": [{"use": "official", "family": "Das", "given": ["Sourav"]}], "telecom": [{"system": "email", "value": "sourav.das@example.in", "use": "home"}], "gender": "male", "birthDate": "1999-09-09", "address": [{"use": "home", "postalCode": "700001", "country": "IN"}], "maritalStatus": {"coding": [{"code": "S", "display": "Single"}]}, "extension": [ {"url": "http://example.com/fhir/StructureDefinition/blood-pressure", "valueString": "110/70"}, {"url": "http://example.com/fhir/StructureDefinition/last-visit", "valueDate": "2024-03-12"}, {"url": "http://example.com/fhir/StructureDefinition/chronic-conditions", "valueString": "none"} ]}}
+  ]
+} 

@@ -1,0 +1,425 @@
+2025-05-03 14:49:35,528 - INFO - Ensured directory exists: output
+2025-05-03 14:49:35,531 - INFO - Ensured directory exists: output/emails
+2025-05-03 14:49:35,531 - INFO - Loading patient data from data/patients.json
+2025-05-03 14:49:35,535 - INFO - Loaded data for 13 entries
+2025-05-03 14:49:35,535 - INFO - Starting LangGraph workflow
+2025-05-03 14:49:35,573 - ERROR - Unexpected error during pipeline execution: 'text'
+2025-05-03 14:49:50,214 - INFO - Ensured directory exists: output
+2025-05-03 14:49:50,221 - INFO - Ensured directory exists: output/emails
+2025-05-03 14:49:50,223 - INFO - Loading patient data from data/patients.json
+2025-05-03 14:49:50,226 - INFO - Loaded data for 13 entries
+2025-05-03 14:49:50,228 - INFO - Starting LangGraph workflow
+2025-05-03 14:49:50,275 - ERROR - Unexpected error during pipeline execution: 'text'
+2025-05-03 14:53:13,570 - INFO - Ensured directory exists: output
+2025-05-03 14:53:13,576 - INFO - Ensured directory exists: output/emails
+2025-05-03 14:53:13,579 - INFO - Loading patient data from data/patients.json
+2025-05-03 14:53:13,584 - INFO - Loaded data for 13 entries
+2025-05-03 14:53:13,594 - INFO - Starting LangGraph workflow
+2025-05-03 14:53:13,731 - ERROR - Unexpected error during pipeline execution: 'text'
+2025-05-03 14:54:11,061 - INFO - Ensured directory exists: output
+2025-05-03 14:54:11,061 - INFO - Ensured directory exists: output/emails
+2025-05-03 14:54:11,069 - INFO - Loading patient data from data/patients.json
+2025-05-03 14:54:11,075 - INFO - Loaded data for 13 entries
+2025-05-03 14:54:11,076 - INFO - Starting LangGraph workflow
+2025-05-03 14:54:11,093 - ERROR - Unexpected error during pipeline execution: 'text'
+2025-05-03 14:54:29,568 - INFO - Ensured directory exists: output
+2025-05-03 14:54:29,570 - INFO - Ensured directory exists: output/emails
+2025-05-03 14:54:29,571 - INFO - Loading patient data from data/patients.json
+2025-05-03 14:54:29,571 - INFO - Loaded data for 13 entries
+2025-05-03 14:54:29,571 - INFO - Starting LangGraph workflow
+2025-05-03 14:54:29,581 - ERROR - Unexpected error during pipeline execution: 'text'
+2025-05-03 14:56:57,548 - INFO - Ensured directory exists: output
+2025-05-03 14:56:57,551 - INFO - Ensured directory exists: output/emails
+2025-05-03 14:56:57,551 - INFO - Loading patient data from data/patients.json
+2025-05-03 14:56:57,553 - INFO - Loaded data for 13 entries
+2025-05-03 14:56:57,553 - INFO - Starting LangGraph workflow
+2025-05-03 14:56:57,582 - ERROR - Unexpected error during pipeline execution: 'text'
+2025-05-03 14:56:57,897 - INFO - Ensured directory exists: output
+2025-05-03 14:56:57,901 - INFO - Ensured directory exists: output/emails
+2025-05-03 14:56:57,903 - INFO - Loading patient data from data/patients.json
+2025-05-03 14:56:57,903 - INFO - Loaded data for 13 entries
+2025-05-03 14:56:57,903 - INFO - Starting LangGraph workflow
+2025-05-03 14:56:57,933 - ERROR - Unexpected error during pipeline execution: 'text'
+2025-05-03 14:57:13,631 - INFO - Ensured directory exists: output
+2025-05-03 14:57:13,631 - INFO - Ensured directory exists: output/emails
+2025-05-03 14:57:13,631 - INFO - Loading patient data from data/patients.json
+2025-05-03 14:57:13,631 - INFO - Loaded data for 13 entries
+2025-05-03 14:57:13,631 - INFO - Starting LangGraph workflow
+2025-05-03 14:57:13,645 - ERROR - Unexpected error during pipeline execution: 'text'
+2025-05-03 14:57:26,040 - INFO - Ensured directory exists: output
+2025-05-03 14:57:26,049 - INFO - Ensured directory exists: output/emails
+2025-05-03 14:57:26,050 - INFO - Loading patient data from data/patients.json
+2025-05-03 14:57:26,051 - INFO - Loaded data for 13 entries
+2025-05-03 14:57:26,051 - INFO - Starting LangGraph workflow
+2025-05-03 14:57:26,075 - ERROR - Unexpected error during pipeline execution: 'text'
+2025-05-03 14:58:02,234 - INFO - Ensured directory exists: output
+2025-05-03 14:58:02,237 - INFO - Ensured directory exists: output/emails
+2025-05-03 14:58:02,237 - INFO - Loading patient data from data/patients.json
+2025-05-03 14:58:02,241 - INFO - Loaded data for 13 entries
+2025-05-03 14:58:02,244 - INFO - Starting LangGraph workflow
+2025-05-03 14:58:02,283 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 15:01:14,249 - INFO - Ensured directory exists: output
+2025-05-03 15:01:14,256 - INFO - Ensured directory exists: output/emails
+2025-05-03 15:01:14,257 - INFO - Loading patient data from data/patients.json
+2025-05-03 15:01:14,264 - INFO - Loaded data for 13 entries
+2025-05-03 15:01:14,264 - INFO - Starting LangGraph workflow
+2025-05-03 15:02:17,480 - ERROR - Unexpected error during pipeline execution: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000002AC7E4DB140>: Failed to establish a new connection: [WinError 10065] A socket operation was attempted to an unreachable host'))
+2025-05-03 15:02:28,287 - INFO - Ensured directory exists: output
+2025-05-03 15:02:28,291 - INFO - Ensured directory exists: output/emails
+2025-05-03 15:02:28,293 - INFO - Loading patient data from data/patients.json
+2025-05-03 15:02:28,297 - INFO - Loaded data for 13 entries
+2025-05-03 15:02:28,297 - INFO - Starting LangGraph workflow
+2025-05-03 15:03:44,140 - INFO - Ensured directory exists: output
+2025-05-03 15:03:44,140 - INFO - Ensured directory exists: output/emails
+2025-05-03 15:03:44,142 - INFO - Loading patient data from data/patients.json
+2025-05-03 15:03:44,145 - INFO - Loaded data for 13 entries
+2025-05-03 15:03:44,146 - INFO - Starting LangGraph workflow
+2025-05-03 15:06:09,770 - ERROR - Unexpected error during pipeline execution: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002AC7E496240>, 'Connection to openrouter.ai timed out. (connect timeout=None)'))
+2025-05-03 15:06:51,711 - ERROR - Unexpected error during pipeline execution: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002AC7E4975F0>, 'Connection to openrouter.ai timed out. (connect timeout=None)'))
+2025-05-03 15:08:46,402 - INFO - Ensured directory exists: output
+2025-05-03 15:08:46,403 - INFO - Ensured directory exists: output/emails
+2025-05-03 15:08:46,405 - INFO - Loading patient data from data/patients.json
+2025-05-03 15:08:46,407 - INFO - Loaded data for 13 entries
+2025-05-03 15:08:46,409 - INFO - Starting LangGraph workflow
+2025-05-03 16:21:54,463 - INFO - Ensured directory exists: output
+2025-05-03 16:21:54,463 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:21:54,463 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:21:54,471 - INFO - Loaded data for 13 entries
+2025-05-03 16:21:54,473 - INFO - Starting LangGraph workflow
+2025-05-03 16:21:54,531 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:21:56,931 - INFO - Ensured directory exists: output
+2025-05-03 16:21:56,934 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:21:56,934 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:21:56,934 - INFO - Loaded data for 13 entries
+2025-05-03 16:21:56,934 - INFO - Starting LangGraph workflow
+2025-05-03 16:21:56,952 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:21:57,500 - INFO - Ensured directory exists: output
+2025-05-03 16:21:57,507 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:21:57,507 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:21:57,510 - INFO - Loaded data for 13 entries
+2025-05-03 16:21:57,511 - INFO - Starting LangGraph workflow
+2025-05-03 16:21:57,531 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:21:57,661 - INFO - Ensured directory exists: output
+2025-05-03 16:21:57,661 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:21:57,661 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:21:57,661 - INFO - Loaded data for 13 entries
+2025-05-03 16:21:57,661 - INFO - Starting LangGraph workflow
+2025-05-03 16:21:57,678 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:21:57,796 - INFO - Ensured directory exists: output
+2025-05-03 16:21:57,796 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:21:57,796 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:21:57,796 - INFO - Loaded data for 13 entries
+2025-05-03 16:21:57,796 - INFO - Starting LangGraph workflow
+2025-05-03 16:21:57,812 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:21:58,186 - INFO - Ensured directory exists: output
+2025-05-03 16:21:58,186 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:21:58,186 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:21:58,197 - INFO - Loaded data for 13 entries
+2025-05-03 16:21:58,197 - INFO - Starting LangGraph workflow
+2025-05-03 16:21:58,213 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:21:58,327 - INFO - Ensured directory exists: output
+2025-05-03 16:21:58,328 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:21:58,328 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:21:58,328 - INFO - Loaded data for 13 entries
+2025-05-03 16:21:58,328 - INFO - Starting LangGraph workflow
+2025-05-03 16:21:58,336 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:21:58,475 - INFO - Ensured directory exists: output
+2025-05-03 16:21:58,475 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:21:58,475 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:21:58,475 - INFO - Loaded data for 13 entries
+2025-05-03 16:21:58,478 - INFO - Starting LangGraph workflow
+2025-05-03 16:21:58,487 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:21:58,648 - INFO - Ensured directory exists: output
+2025-05-03 16:21:58,650 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:21:58,650 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:21:58,650 - INFO - Loaded data for 13 entries
+2025-05-03 16:21:58,650 - INFO - Starting LangGraph workflow
+2025-05-03 16:21:58,669 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:23:55,218 - INFO - Ensured directory exists: output
+2025-05-03 16:23:55,218 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:23:55,218 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:23:55,218 - INFO - Loaded data for 13 entries
+2025-05-03 16:23:55,218 - INFO - Starting LangGraph workflow
+2025-05-03 16:30:36,473 - INFO - Ensured directory exists: output
+2025-05-03 16:30:36,475 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:30:36,475 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:30:36,478 - INFO - Loaded data for 13 entries
+2025-05-03 16:30:36,478 - INFO - Starting LangGraph workflow
+2025-05-03 16:30:36,548 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:30:39,385 - INFO - Ensured directory exists: output
+2025-05-03 16:30:39,387 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:30:39,387 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:30:39,387 - INFO - Loaded data for 13 entries
+2025-05-03 16:30:39,387 - INFO - Starting LangGraph workflow
+2025-05-03 16:30:39,409 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:30:43,235 - INFO - Ensured directory exists: output
+2025-05-03 16:30:43,237 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:30:43,240 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:30:43,242 - INFO - Loaded data for 13 entries
+2025-05-03 16:30:43,243 - INFO - Starting LangGraph workflow
+2025-05-03 16:30:43,264 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:31:46,861 - INFO - Ensured directory exists: output
+2025-05-03 16:31:46,865 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:31:46,868 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:31:46,872 - INFO - Loaded data for 13 entries
+2025-05-03 16:31:46,873 - INFO - Starting LangGraph workflow
+2025-05-03 16:31:46,935 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:32:14,441 - INFO - Ensured directory exists: output
+2025-05-03 16:32:14,449 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:32:14,449 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:32:14,453 - INFO - Loaded data for 13 entries
+2025-05-03 16:32:14,453 - INFO - Starting LangGraph workflow
+2025-05-03 16:32:14,480 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:36:31,593 - INFO - Ensured directory exists: output
+2025-05-03 16:36:31,593 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:36:31,593 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:36:31,593 - INFO - Loaded data for 13 entries
+2025-05-03 16:36:31,593 - INFO - Starting LangGraph workflow
+2025-05-03 16:36:31,611 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:36:33,187 - INFO - Ensured directory exists: output
+2025-05-03 16:36:33,187 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:36:33,187 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:36:33,187 - INFO - Loaded data for 13 entries
+2025-05-03 16:36:33,187 - INFO - Starting LangGraph workflow
+2025-05-03 16:36:33,203 - ERROR - Unexpected error during pipeline execution: OPENROUTER_API_KEY environment variable not set
+2025-05-03 16:36:48,568 - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-55' coro=<WebSocketProtocol13.write_message.<locals>.wrapper() done, defined at D:\hospitalgpt\venv\Lib\site-packages\tornado\websocket.py:1086> exception=WebSocketClosedError()>
+Traceback (most recent call last):
+  File "D:\hospitalgpt\venv\Lib\site-packages\streamlit\web\bootstrap.py", line 347, in run
+    if asyncio.get_running_loop().is_running():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\hospitalgpt\venv\Lib\site-packages\tornado\websocket.py", line 1088, in wrapper
+    await fut
+tornado.iostream.StreamClosedError: Stream is closed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\hospitalgpt\venv\Lib\site-packages\tornado\websocket.py", line 1090, in wrapper
+    raise WebSocketClosedError()
+tornado.websocket.WebSocketClosedError
+2025-05-03 16:36:55,136 - INFO - Ensured directory exists: output
+2025-05-03 16:36:55,138 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:36:55,138 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:36:55,142 - INFO - Loaded data for 13 entries
+2025-05-03 16:36:55,144 - INFO - Starting LangGraph workflow
+2025-05-03 16:42:33,963 - INFO - Workflow completed in 338.82 seconds
+2025-05-03 16:42:33,963 - INFO - Verified output file exists: output/summary.md
+2025-05-03 16:42:33,963 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-03 16:42:33,963 - INFO - Generated 4 email files
+2025-05-03 16:54:10,136 - INFO - Ensured directory exists: output
+2025-05-03 16:54:10,144 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:54:10,144 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:54:10,144 - INFO - Loaded data for 13 entries
+2025-05-03 16:54:10,144 - INFO - Starting LangGraph workflow
+2025-05-03 16:55:22,340 - INFO - Starting HospitalGPT2 pipeline
+2025-05-03 16:55:22,340 - INFO - Ensured directory exists: output
+2025-05-03 16:55:22,340 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:55:22,340 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:55:22,340 - INFO - Loaded data for 13 entries
+2025-05-03 16:55:22,340 - INFO - Starting LangGraph workflow
+2025-05-03 16:55:22,674 - INFO - Ensured directory exists: output
+2025-05-03 16:55:22,681 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:55:22,681 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:55:22,688 - INFO - Loaded data for 13 entries
+2025-05-03 16:55:22,689 - INFO - Starting LangGraph workflow
+2025-05-03 16:57:10,334 - INFO - Ensured directory exists: output
+2025-05-03 16:57:10,337 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:57:10,339 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:57:10,342 - INFO - Loaded data for 13 entries
+2025-05-03 16:57:10,345 - INFO - Starting LangGraph workflow
+2025-05-03 16:57:45,891 - INFO - Ensured directory exists: output
+2025-05-03 16:57:45,894 - INFO - Ensured directory exists: output/emails
+2025-05-03 16:57:45,894 - INFO - Loading patient data from data/patients.json
+2025-05-03 16:57:45,900 - INFO - Loaded data for 13 entries
+2025-05-03 16:57:45,900 - INFO - Starting LangGraph workflow
+2025-05-03 16:59:33,019 - ERROR - Unexpected error during pipeline execution: 'choices'
+2025-05-03 17:00:04,146 - ERROR - Unexpected error during pipeline execution: 'choices'
+2025-05-03 17:00:21,485 - ERROR - Unexpected error during pipeline execution: 'choices'
+2025-05-03 17:00:21,485 - ERROR - Pipeline failed: 'choices'
+2025-05-03 17:00:41,724 - INFO - Starting HospitalGPT2 pipeline
+2025-05-03 17:00:41,724 - INFO - Ensured directory exists: output
+2025-05-03 17:00:41,724 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:00:41,724 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:00:41,724 - INFO - Loaded data for 13 entries
+2025-05-03 17:00:41,728 - INFO - Starting LangGraph workflow
+2025-05-03 17:00:46,281 - ERROR - Unexpected error during pipeline execution: 'choices'
+2025-05-03 17:00:46,281 - ERROR - Pipeline failed: 'choices'
+2025-05-03 17:01:32,151 - INFO - Ensured directory exists: output
+2025-05-03 17:01:32,155 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:01:32,157 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:01:32,161 - INFO - Loaded data for 13 entries
+2025-05-03 17:01:32,165 - INFO - Starting LangGraph workflow
+2025-05-03 17:01:38,244 - ERROR - Unexpected error during pipeline execution: 'choices'
+2025-05-03 17:01:42,353 - INFO - Ensured directory exists: output
+2025-05-03 17:01:42,359 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:01:42,361 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:01:42,365 - INFO - Loaded data for 13 entries
+2025-05-03 17:01:42,365 - INFO - Starting LangGraph workflow
+2025-05-03 17:01:44,731 - ERROR - Unexpected error during pipeline execution: 'choices'
+2025-05-03 17:01:59,457 - INFO - Ensured directory exists: output
+2025-05-03 17:01:59,461 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:01:59,461 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:01:59,461 - INFO - Loaded data for 13 entries
+2025-05-03 17:01:59,461 - INFO - Starting LangGraph workflow
+2025-05-03 17:02:01,521 - ERROR - Unexpected error during pipeline execution: 'choices'
+2025-05-03 17:02:29,378 - INFO - Ensured directory exists: output
+2025-05-03 17:02:29,378 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:02:29,379 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:02:29,381 - INFO - Loaded data for 13 entries
+2025-05-03 17:02:29,381 - INFO - Starting LangGraph workflow
+2025-05-03 17:02:32,283 - ERROR - Unexpected error during pipeline execution: 'choices'
+2025-05-03 17:05:28,698 - INFO - Ensured directory exists: output
+2025-05-03 17:05:28,699 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:05:28,701 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:05:28,702 - INFO - Loaded data for 13 entries
+2025-05-03 17:05:28,702 - INFO - Starting LangGraph workflow
+2025-05-03 17:05:30,249 - ERROR - Unexpected error during pipeline execution: 'choices'
+2025-05-03 17:20:00,007 - INFO - Ensured directory exists: output
+2025-05-03 17:20:00,015 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:20:00,020 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:20:00,023 - INFO - Loaded data for 13 entries
+2025-05-03 17:20:00,025 - INFO - Starting LangGraph workflow
+2025-05-03 17:20:07,561 - ERROR - Unexpected error during pipeline execution: 'choices'
+2025-05-03 17:21:08,191 - INFO - Ensured directory exists: output
+2025-05-03 17:21:08,199 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:21:08,203 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:21:08,207 - INFO - Loaded data for 13 entries
+2025-05-03 17:21:08,209 - INFO - Starting LangGraph workflow
+2025-05-03 17:21:22,957 - ERROR - Unexpected error during pipeline execution: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-05-03 17:22:03,290 - INFO - Ensured directory exists: output
+2025-05-03 17:22:03,300 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:22:03,302 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:22:03,305 - INFO - Loaded data for 13 entries
+2025-05-03 17:22:03,305 - INFO - Starting LangGraph workflow
+2025-05-03 17:22:05,512 - ERROR - Unexpected error during pipeline execution: Unexpected response format. Response: {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746316800000'}, 'provider_name': None}}, 'user_id': 'user_2w5tNCjCuv3b9KJzgcQNtgVsaPg'}
+2025-05-03 17:22:52,986 - INFO - Ensured directory exists: output
+2025-05-03 17:22:52,987 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:22:52,988 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:22:52,989 - INFO - Loaded data for 13 entries
+2025-05-03 17:22:52,990 - INFO - Starting LangGraph workflow
+2025-05-03 17:22:54,747 - ERROR - Unexpected error during pipeline execution: Unexpected response format. Response: {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746316800000'}, 'provider_name': None}}, 'user_id': 'user_2w5tNCjCuv3b9KJzgcQNtgVsaPg'}
+2025-05-03 17:29:02,140 - INFO - Ensured directory exists: output
+2025-05-03 17:29:02,144 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:29:02,145 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:29:02,147 - INFO - Loaded data for 13 entries
+2025-05-03 17:29:02,147 - INFO - Starting LangGraph workflow
+2025-05-03 17:29:04,309 - ERROR - Unexpected error during pipeline execution: Unexpected response format. Response: {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746316800000'}, 'provider_name': None}}, 'user_id': 'user_2w5tNCjCuv3b9KJzgcQNtgVsaPg'}
+2025-05-03 17:31:25,231 - INFO - Ensured directory exists: output
+2025-05-03 17:31:25,231 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:31:25,233 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:31:25,236 - INFO - Loaded data for 13 entries
+2025-05-03 17:31:25,236 - INFO - Starting LangGraph workflow
+2025-05-03 17:31:28,431 - ERROR - Unexpected error during pipeline execution: Unexpected response format. Response: {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746316800000'}, 'provider_name': None}}, 'user_id': 'user_2w5tNCjCuv3b9KJzgcQNtgVsaPg'}
+2025-05-03 17:39:56,546 - INFO - Ensured directory exists: output
+2025-05-03 17:39:56,556 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:39:56,559 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:39:56,564 - INFO - Loaded data for 13 entries
+2025-05-03 17:39:56,565 - INFO - Starting LangGraph workflow
+2025-05-03 17:39:58,530 - ERROR - Unexpected error during pipeline execution: Unexpected response format. Response: {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746316800000'}, 'provider_name': None}}, 'user_id': 'user_2w5tNCjCuv3b9KJzgcQNtgVsaPg'}
+2025-05-03 17:41:26,381 - INFO - Ensured directory exists: output
+2025-05-03 17:41:26,381 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:41:26,381 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:41:26,400 - INFO - Loaded data for 13 entries
+2025-05-03 17:41:26,400 - INFO - Starting LangGraph workflow
+2025-05-03 17:41:34,534 - ERROR - Unexpected error during pipeline execution: Unexpected response format. Response: {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746316800000'}, 'provider_name': None}}, 'user_id': 'user_2w5tNCjCuv3b9KJzgcQNtgVsaPg'}
+2025-05-03 17:42:06,267 - INFO - Ensured directory exists: output
+2025-05-03 17:42:06,270 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:42:06,270 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:42:06,270 - INFO - Loaded data for 13 entries
+2025-05-03 17:42:06,271 - INFO - Starting LangGraph workflow
+2025-05-03 17:42:08,174 - ERROR - Unexpected error during pipeline execution: Unexpected response format. Response: {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746316800000'}, 'provider_name': None}}, 'user_id': 'user_2w5tNCjCuv3b9KJzgcQNtgVsaPg'}
+2025-05-03 17:44:58,966 - INFO - Ensured directory exists: output
+2025-05-03 17:44:58,969 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:44:58,969 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:44:58,973 - INFO - Loaded data for 13 entries
+2025-05-03 17:44:58,976 - INFO - Starting LangGraph workflow
+2025-05-03 17:45:02,661 - ERROR - Unexpected error during pipeline execution: Unexpected response format. Response: {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746316800000'}, 'provider_name': None}}, 'user_id': 'user_2w5tNCjCuv3b9KJzgcQNtgVsaPg'}
+2025-05-03 17:50:13,594 - INFO - Ensured directory exists: output
+2025-05-03 17:50:13,596 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:50:13,596 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:50:13,597 - INFO - Loaded data for 13 entries
+2025-05-03 17:50:13,598 - INFO - Starting LangGraph workflow
+2025-05-03 17:50:15,236 - ERROR - Unexpected error during pipeline execution: Unexpected response format. Response: {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746316800000'}, 'provider_name': None}}, 'user_id': 'user_2w5tNCjCuv3b9KJzgcQNtgVsaPg'}
+2025-05-03 17:54:27,261 - INFO - Ensured directory exists: output
+2025-05-03 17:54:27,261 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:54:27,261 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:54:27,261 - INFO - Loaded data for 13 entries
+2025-05-03 17:54:27,261 - INFO - Starting LangGraph workflow
+2025-05-03 17:59:01,520 - ERROR - Unexpected error during pipeline execution: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001CC37E54440>, 'Connection to openrouter.ai timed out. (connect timeout=30)'))
+2025-05-03 17:59:08,611 - INFO - Ensured directory exists: output
+2025-05-03 17:59:08,611 - INFO - Ensured directory exists: output/emails
+2025-05-03 17:59:08,611 - INFO - Loading patient data from data/patients.json
+2025-05-03 17:59:08,611 - INFO - Loaded data for 13 entries
+2025-05-03 17:59:08,611 - INFO - Starting LangGraph workflow
+2025-05-03 18:01:54,491 - INFO - Ensured directory exists: output
+2025-05-03 18:01:54,492 - INFO - Ensured directory exists: output/emails
+2025-05-03 18:01:54,492 - INFO - Loading patient data from data/patients.json
+2025-05-03 18:01:54,493 - INFO - Loaded data for 13 entries
+2025-05-03 18:01:54,493 - INFO - Starting LangGraph workflow
+2025-05-03 18:04:36,925 - ERROR - Unexpected error during pipeline execution: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x00000186DC7237A0>, 'Connection to openrouter.ai timed out. (connect timeout=30)'))
+2025-05-03 18:05:32,145 - INFO - Ensured directory exists: output
+2025-05-03 18:05:32,145 - INFO - Ensured directory exists: output/emails
+2025-05-03 18:05:32,146 - INFO - Loading patient data from data/patients.json
+2025-05-03 18:05:32,146 - INFO - Loaded data for 13 entries
+2025-05-03 18:05:32,147 - INFO - Starting LangGraph workflow
+2025-05-03 18:10:17,587 - INFO - Workflow completed in 285.44 seconds
+2025-05-03 18:10:17,588 - INFO - Verified output file exists: output/summary.md
+2025-05-03 18:10:17,588 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-03 18:10:17,588 - INFO - Generated 4 email files
+2025-05-03 18:20:53,340 - INFO - Ensured directory exists: output
+2025-05-03 18:20:53,342 - INFO - Ensured directory exists: output/emails
+2025-05-03 18:20:53,343 - INFO - Loading patient data from data/patients.json
+2025-05-03 18:20:53,343 - INFO - Loaded data for 13 entries
+2025-05-03 18:20:53,344 - INFO - Starting LangGraph workflow
+2025-05-03 18:27:31,681 - INFO - Workflow completed in 398.34 seconds
+2025-05-03 18:27:31,681 - INFO - Verified output file exists: output/summary.md
+2025-05-03 18:27:31,681 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-03 18:27:31,681 - INFO - Generated 4 email files
+2025-05-03 18:39:12,925 - INFO - Ensured directory exists: output
+2025-05-03 18:39:12,927 - INFO - Ensured directory exists: output/emails
+2025-05-03 18:39:12,927 - INFO - Loading patient data from data/patients.json
+2025-05-03 18:39:12,929 - INFO - Loaded data for 14 entries
+2025-05-03 18:39:12,930 - INFO - Starting LangGraph workflow
+2025-05-03 18:46:32,875 - INFO - Workflow completed in 439.94 seconds
+2025-05-03 18:46:32,875 - INFO - Verified output file exists: output/summary.md
+2025-05-03 18:46:32,877 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-03 18:46:32,877 - INFO - Generated 10 email files
+2025-05-03 19:06:54,485 - INFO - Ensured directory exists: output
+2025-05-03 19:06:54,490 - INFO - Ensured directory exists: output/emails
+2025-05-03 19:06:54,490 - INFO - Loading patient data from data/patients.json
+2025-05-03 19:06:54,494 - INFO - Loaded data for 14 entries
+2025-05-03 19:06:54,496 - INFO - Starting LangGraph workflow
+2025-05-03 19:09:19,045 - ERROR - Unexpected error during pipeline execution: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-05-03 19:10:02,891 - INFO - Ensured directory exists: output
+2025-05-03 19:10:02,897 - INFO - Ensured directory exists: output/emails
+2025-05-03 19:10:02,900 - INFO - Loading patient data from data/patients.json
+2025-05-03 19:10:02,901 - INFO - Loaded data for 14 entries
+2025-05-03 19:10:02,903 - INFO - Starting LangGraph workflow
+2025-05-03 19:10:48,570 - ERROR - Unexpected error during pipeline execution: Unexpected response format. Response: {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746316800000'}, 'provider_name': None}}, 'user_id': 'user_2waHnLUnB84C2aE91pD0W6MLrfC'}
+2025-05-03 19:11:38,547 - INFO - Ensured directory exists: output
+2025-05-03 19:11:38,552 - INFO - Ensured directory exists: output/emails
+2025-05-03 19:11:38,555 - INFO - Loading patient data from data/patients.json
+2025-05-03 19:11:38,560 - INFO - Loaded data for 14 entries
+2025-05-03 19:11:38,561 - INFO - Starting LangGraph workflow
+2025-05-03 19:11:40,438 - ERROR - Unexpected error during pipeline execution: Unexpected response format. Response: {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1746316800000'}, 'provider_name': None}}, 'user_id': 'user_2waHnLUnB84C2aE91pD0W6MLrfC'}
+2025-05-03 19:18:46,945 - INFO - Ensured directory exists: output
+2025-05-03 19:18:46,949 - INFO - Ensured directory exists: output/emails
+2025-05-03 19:18:46,950 - INFO - Loading patient data from data/patients.json
+2025-05-03 19:18:46,954 - INFO - Loaded data for 14 entries
+2025-05-03 19:18:46,954 - INFO - Starting LangGraph workflow
+2025-05-03 19:20:11,270 - ERROR - Unexpected error during pipeline execution: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001192E698350>, 'Connection to openrouter.ai timed out. (connect timeout=30)'))
+2025-05-03 19:24:22,758 - INFO - Ensured directory exists: output
+2025-05-03 19:24:22,764 - INFO - Ensured directory exists: output/emails
+2025-05-03 19:24:22,767 - INFO - Loading patient data from data/patients.json
+2025-05-03 19:24:22,771 - INFO - Loaded data for 14 entries
+2025-05-03 19:24:22,771 - INFO - Starting LangGraph workflow
+2025-05-03 19:34:59,492 - INFO - Workflow completed in 636.72 seconds
+2025-05-03 19:34:59,492 - INFO - Verified output file exists: output/summary.md
+2025-05-03 19:34:59,498 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-03 19:34:59,498 - INFO - Generated 10 email files
