@@ -423,3 +423,26 @@ tornado.websocket.WebSocketClosedError
 2025-05-03 19:34:59,492 - INFO - Verified output file exists: output/summary.md
 2025-05-03 19:34:59,498 - INFO - Verified output file exists: output/risk_labels.json
 2025-05-03 19:34:59,498 - INFO - Generated 10 email files
+2025-05-03 19:48:27,810 - INFO - Ensured directory exists: output
+2025-05-03 19:48:27,815 - INFO - Ensured directory exists: output/emails
+2025-05-03 19:48:27,815 - INFO - Loading patient data from data/patients.json
+2025-05-03 19:48:27,818 - INFO - Loaded data for 14 entries
+2025-05-03 19:48:27,818 - INFO - Starting LangGraph workflow
+2025-05-03 19:52:23,722 - ERROR - Unexpected error during pipeline execution: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001F072F99910>, 'Connection to openrouter.ai timed out. (connect timeout=30)'))
+2025-05-03 19:54:01,020 - INFO - Ensured directory exists: output
+2025-05-03 19:54:01,023 - INFO - Ensured directory exists: output/emails
+2025-05-03 19:54:01,025 - INFO - Loading patient data from data/patients.json
+2025-05-03 19:54:01,025 - INFO - Loaded data for 14 entries
+2025-05-03 19:54:01,025 - INFO - Starting LangGraph workflow
+2025-05-03 19:57:47,243 - ERROR - Unexpected error during pipeline execution: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-03 19:59:02,035 - INFO - Ensured directory exists: output
+2025-05-03 19:59:02,036 - INFO - Ensured directory exists: output/emails
+2025-05-03 19:59:02,036 - INFO - Loading patient data from data/patients.json
+2025-05-03 19:59:02,038 - INFO - Loaded data for 14 entries
+2025-05-03 19:59:02,040 - INFO - Starting LangGraph workflow
+2025-05-03 19:59:44,815 - ERROR - Unexpected error during pipeline execution: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+2025-05-03 19:59:53,144 - INFO - Ensured directory exists: output
+2025-05-03 19:59:53,148 - INFO - Ensured directory exists: output/emails
+2025-05-03 19:59:53,151 - INFO - Loading patient data from data/patients.json
+2025-05-03 19:59:53,159 - INFO - Loaded data for 14 entries
+2025-05-03 19:59:53,164 - INFO - Starting LangGraph workflow
