@@ -5,6 +5,8 @@ from pathlib import Path
 from typing import Dict, Any
 import sys
 from datetime import datetime
+import glob
+import os
 
 from agents.workflow import run_workflow, load_patient_data
 
@@ -13,7 +15,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('output/workflow.log'),
+        logging.FileHandler('output/workflow.log', encoding='utf-8'),
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -26,11 +28,18 @@ def ensure_directories():
         Path(directory).mkdir(exist_ok=True)
         logger.info(f"Ensured directory exists: {directory}")
 
+def clear_old_emails():
+    for f in glob.glob('output/emails/*.txt'):
+        os.remove(f)
+
 def run_pipeline() -> Dict[str, Any]:
     """Run the complete LangGraph pipeline."""
     try:
         # Ensure directories exist
         ensure_directories()
+        
+        # Clear old emails
+        clear_old_emails()
         
         # Load patient data
         logger.info("Loading patient data from data/patients.json")

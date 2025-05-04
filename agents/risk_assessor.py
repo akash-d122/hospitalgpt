@@ -15,6 +15,28 @@ class RiskState(TypedDict):
     patient_data: Dict[str, Any]
     risk_assessment: Dict[str, Any]
 
+def get_patient_vitals(patient: Dict[str, Any]) -> Dict[str, str]:
+    """Extract patient vitals from extensions."""
+    vitals = {}
+    for ext in patient.get("extension", []):
+        if "blood-pressure" in ext.get("url", ""):
+            vitals["blood_pressure"] = ext.get("valueString", "")
+        elif "hba1c" in ext.get("url", ""):
+            vitals["hba1c"] = ext.get("valueString", "")
+        elif "cholesterol" in ext.get("url", ""):
+            vitals["cholesterol"] = ext.get("valueString", "")
+    return vitals
+
+def get_patient_conditions(patient_data: Dict[str, Any], patient_id: str) -> List[Dict[str, Any]]:
+    """Get all conditions for a specific patient."""
+    conditions = []
+    for entry in patient_data["entry"]:
+        if entry["resource"]["resourceType"] == "Condition":
+            subject = entry["resource"].get("subject", {})
+            if subject.get("reference") == f"Patient/{patient_id}":
+                conditions.append(entry["resource"])
+    return conditions
+
 def create_risk_assessor_agent() -> StateGraph:
     """Create a risk assessor agent that evaluates patient health risks."""
     
@@ -25,44 +47,79 @@ def create_risk_assessor_agent() -> StateGraph:
         for entry in state["patient_data"]["entry"]:
             if entry["resource"]["resourceType"] == "Patient":
                 patient = entry["resource"]
+                patient_id = patient["id"]
                 patient_name = f"{patient['name'][0]['given'][0]} {patient['name'][0]['family']}"
                 print(f"[DEBUG] Assessing risk for patient: {patient_name}")
                 
+                # Get patient's vitals
+                vitals = get_patient_vitals(patient)
+                
                 # Get patient's conditions
-                conditions = []
-                for cond_entry in state["patient_data"]["entry"]:
-                    if cond_entry["resource"]["resourceType"] == "Condition":
-                        code = cond_entry["resource"].get("code", {})
-                        condition_text = code.get("text") or (code.get("coding", [{}])[0].get("display", "Unknown"))
-                        conditions.append(condition_text)
-                print(f"[DEBUG] Using openrouter_chat for {patient_name} with conditions: {conditions}")
+                conditions = get_patient_conditions(state["patient_data"], patient_id)
                 
-                # Generate risk assessment using OpenRouter
-                prompt = f"""Assess the risk level for patient {patient_name}:
-                Age: {patient.get('birthDate', 'N/A')}
-                Conditions: {conditions}
+                # Count severe conditions
+                severe_conditions = sum(1 for c in conditions 
+                                     if c.get("code", {}).get("coding", [{}])[0].get("severity") == "severe")
                 
-                Provide a risk assessment with:
-                1. Risk Level (HIGH/MEDIUM/LOW)
-                2. Brief explanation
-                3. Recommended actions"""
+                # Count moderate conditions
+                moderate_conditions = sum(1 for c in conditions 
+                                       if c.get("code", {}).get("coding", [{}])[0].get("severity") == "moderate")
                 
-                assessment = openrouter_chat([
-                    {"role": "user", "content": prompt}
-                ])
-                print(f"[DEBUG] openrouter_chat response for {patient_name}: {assessment}")
+                # Evaluate vitals
+                bp_systolic = int(vitals.get("blood_pressure", "0/0").split("/")[0])
+                hba1c = float(vitals.get("hba1c", "0"))
+                cholesterol = int(vitals.get("cholesterol", "0"))
                 
-                # Parse the response to extract risk level
-                risk_level = "MEDIUM"  # Default
-                if "HIGH" in assessment.upper():
+                # Determine risk level based on conditions and vitals
+                risk_level = "LOW"
+                explanation = []
+                recommended_actions = []
+                
+                if severe_conditions >= 2 or (severe_conditions == 1 and moderate_conditions >= 2):
                     risk_level = "HIGH"
-                elif "LOW" in assessment.upper():
-                    risk_level = "LOW"
+                    explanation.append("Multiple severe conditions present")
+                    recommended_actions.extend([
+                        "Schedule immediate follow-up appointment",
+                        "Review and adjust medications",
+                        "Consider specialist consultation"
+                    ])
+                elif severe_conditions == 1 or moderate_conditions >= 2:
+                    risk_level = "MEDIUM"
+                    explanation.append("Significant health conditions requiring attention")
+                    recommended_actions.extend([
+                        "Schedule follow-up within 2 weeks",
+                        "Review current medications",
+                        "Implement preventive measures"
+                    ])
+                
+                # Add vitals-based risk factors
+                if bp_systolic >= 160:
+                    risk_level = "HIGH" if risk_level == "MEDIUM" else risk_level
+                    explanation.append("Severely elevated blood pressure")
+                    recommended_actions.append("Urgent blood pressure management needed")
+                elif bp_systolic >= 140:
+                    risk_level = "MEDIUM" if risk_level == "LOW" else risk_level
+                    explanation.append("Elevated blood pressure")
+                    recommended_actions.append("Blood pressure monitoring recommended")
+                
+                if hba1c >= 9.0:
+                    risk_level = "HIGH" if risk_level == "MEDIUM" else risk_level
+                    explanation.append("Poorly controlled diabetes")
+                    recommended_actions.append("Diabetes management review needed")
+                elif hba1c >= 7.0:
+                    risk_level = "MEDIUM" if risk_level == "LOW" else risk_level
+                    explanation.append("Suboptimal diabetes control")
+                    recommended_actions.append("Diabetes management adjustment recommended")
+                
+                if cholesterol >= 240:
+                    risk_level = "MEDIUM" if risk_level == "LOW" else risk_level
+                    explanation.append("Elevated cholesterol")
+                    recommended_actions.append("Cholesterol management review recommended")
                 
                 risk_assessment[patient_name] = {
                     "risk_level": risk_level,
-                    "explanation": assessment,
-                    "recommended_actions": []
+                    "explanation": " ".join(explanation),
+                    "recommended_actions": recommended_actions
                 }
         
         state["risk_assessment"] = risk_assessment

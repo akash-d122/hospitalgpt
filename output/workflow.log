@@ -446,3 +446,500 @@ tornado.websocket.WebSocketClosedError
 2025-05-03 19:59:53,151 - INFO - Loading patient data from data/patients.json
 2025-05-03 19:59:53,159 - INFO - Loaded data for 14 entries
 2025-05-03 19:59:53,164 - INFO - Starting LangGraph workflow
+2025-05-03 21:52:28,754 - INFO - Ensured directory exists: output
+2025-05-03 21:52:28,757 - INFO - Ensured directory exists: output/emails
+2025-05-03 21:52:28,760 - INFO - Loading patient data from data/patients.json
+2025-05-03 21:52:28,764 - INFO - Loaded data for 14 entries
+2025-05-03 21:52:28,765 - INFO - Starting LangGraph workflow
+2025-05-03 21:55:29,251 - ERROR - Unexpected error during pipeline execution: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000020AB20130E0>, 'Connection to openrouter.ai timed out. (connect timeout=30)'))
+2025-05-03 22:02:25,298 - INFO - Ensured directory exists: output
+2025-05-03 22:02:25,371 - INFO - Ensured directory exists: output/emails
+2025-05-03 22:02:25,414 - INFO - Loading patient data from data/patients.json
+2025-05-03 22:02:25,434 - INFO - Loaded data for 14 entries
+2025-05-03 22:02:25,439 - INFO - Starting LangGraph workflow
+2025-05-03 22:03:49,681 - ERROR - Unexpected error during pipeline execution: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000020AB22355B0>, 'Connection to openrouter.ai timed out. (connect timeout=30)'))
+2025-05-03 22:11:36,868 - INFO - Ensured directory exists: output
+2025-05-03 22:11:36,873 - INFO - Ensured directory exists: output/emails
+2025-05-03 22:11:36,874 - INFO - Loading patient data from data/patients.json
+2025-05-03 22:11:36,878 - INFO - Loaded data for 14 entries
+2025-05-03 22:11:36,880 - INFO - Starting LangGraph workflow
+2025-05-03 22:15:34,899 - ERROR - Unexpected error during pipeline execution: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000029A8AF6A630>, 'Connection to openrouter.ai timed out. (connect timeout=30)'))
+2025-05-03 22:16:47,243 - INFO - Ensured directory exists: output
+2025-05-03 22:16:47,247 - INFO - Ensured directory exists: output/emails
+2025-05-03 22:16:47,248 - INFO - Loading patient data from data/patients.json
+2025-05-03 22:16:47,251 - INFO - Loaded data for 14 entries
+2025-05-03 22:16:47,252 - INFO - Starting LangGraph workflow
+2025-05-03 22:22:08,022 - ERROR - Unexpected error during pipeline execution: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000029A8AF69AF0>, 'Connection to openrouter.ai timed out. (connect timeout=30)'))
+2025-05-03 22:22:40,202 - INFO - Ensured directory exists: output
+2025-05-03 22:22:40,206 - INFO - Ensured directory exists: output/emails
+2025-05-03 22:22:40,206 - INFO - Loading patient data from data/patients.json
+2025-05-03 22:22:40,208 - INFO - Loaded data for 14 entries
+2025-05-03 22:22:40,208 - INFO - Starting LangGraph workflow
+2025-05-03 22:24:04,438 - ERROR - Unexpected error during pipeline execution: HTTPSConnectionPool(host='openrouter.ai', port=443): Max retries exceeded with url: /api/v1/chat/completions (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000029A8AF6B3B0>, 'Connection to openrouter.ai timed out. (connect timeout=30)'))
+2025-05-04 11:14:16,440 - INFO - Ensured directory exists: output
+2025-05-04 11:14:16,441 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:14:16,441 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:14:16,441 - INFO - Loaded data for 14 entries
+2025-05-04 11:14:16,443 - INFO - Starting LangGraph workflow
+2025-05-04 11:21:27,974 - ERROR - Unexpected error during pipeline execution: 'charmap' codec can't encode character '\u2264' in position 1548: character maps to <undefined>
+2025-05-04 11:25:40,759 - INFO - Ensured directory exists: output
+2025-05-04 11:25:40,759 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:25:40,761 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:25:40,761 - INFO - Loaded data for 14 entries
+2025-05-04 11:25:40,761 - INFO - Starting LangGraph workflow
+2025-05-04 11:25:40,794 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:25:40,795 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:25:40,795 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:25:40,796 - INFO - Generated 10 email files
+2025-05-04 11:25:59,384 - INFO - Ensured directory exists: output
+2025-05-04 11:25:59,386 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:25:59,386 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:25:59,388 - INFO - Loaded data for 14 entries
+2025-05-04 11:25:59,388 - INFO - Starting LangGraph workflow
+2025-05-04 11:25:59,415 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:25:59,420 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:25:59,421 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:25:59,421 - INFO - Generated 10 email files
+2025-05-04 11:26:00,772 - INFO - Ensured directory exists: output
+2025-05-04 11:26:00,777 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:00,777 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:00,780 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:00,781 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:00,815 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:00,815 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:00,815 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:00,815 - INFO - Generated 10 email files
+2025-05-04 11:26:01,965 - INFO - Ensured directory exists: output
+2025-05-04 11:26:01,967 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:01,968 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:01,969 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:01,969 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:01,999 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:01,999 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:01,999 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:01,999 - INFO - Generated 10 email files
+2025-05-04 11:26:02,401 - INFO - Ensured directory exists: output
+2025-05-04 11:26:02,409 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:02,409 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:02,409 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:02,410 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:02,440 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:02,443 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:02,444 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:02,444 - INFO - Generated 10 email files
+2025-05-04 11:26:02,628 - INFO - Ensured directory exists: output
+2025-05-04 11:26:02,629 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:02,629 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:02,630 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:02,631 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:02,663 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:02,663 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:02,665 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:02,665 - INFO - Generated 10 email files
+2025-05-04 11:26:02,836 - INFO - Ensured directory exists: output
+2025-05-04 11:26:02,837 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:02,838 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:02,839 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:02,839 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:02,876 - INFO - Workflow completed in 0.04 seconds
+2025-05-04 11:26:02,878 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:02,879 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:02,879 - INFO - Generated 10 email files
+2025-05-04 11:26:03,053 - INFO - Ensured directory exists: output
+2025-05-04 11:26:03,054 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:03,054 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:03,055 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:03,056 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:03,095 - INFO - Workflow completed in 0.04 seconds
+2025-05-04 11:26:03,096 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:03,096 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:03,099 - INFO - Generated 10 email files
+2025-05-04 11:26:04,130 - INFO - Ensured directory exists: output
+2025-05-04 11:26:04,131 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:04,132 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:04,133 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:04,133 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:04,164 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:04,165 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:04,165 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:04,165 - INFO - Generated 10 email files
+2025-05-04 11:26:05,195 - INFO - Ensured directory exists: output
+2025-05-04 11:26:05,198 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:05,198 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:05,200 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:05,200 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:05,230 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:05,232 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:05,233 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:05,233 - INFO - Generated 10 email files
+2025-05-04 11:26:05,971 - INFO - Ensured directory exists: output
+2025-05-04 11:26:05,979 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:05,979 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:05,981 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:05,982 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:06,011 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:06,011 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:06,012 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:06,013 - INFO - Generated 10 email files
+2025-05-04 11:26:06,195 - INFO - Ensured directory exists: output
+2025-05-04 11:26:06,195 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:06,196 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:06,196 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:06,196 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:06,228 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:06,229 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:06,230 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:06,230 - INFO - Generated 10 email files
+2025-05-04 11:26:06,393 - INFO - Ensured directory exists: output
+2025-05-04 11:26:06,394 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:06,394 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:06,396 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:06,396 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:06,428 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:06,428 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:06,428 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:06,428 - INFO - Generated 10 email files
+2025-05-04 11:26:06,598 - INFO - Ensured directory exists: output
+2025-05-04 11:26:06,600 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:06,600 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:06,601 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:06,602 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:06,653 - INFO - Workflow completed in 0.05 seconds
+2025-05-04 11:26:06,654 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:06,654 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:06,655 - INFO - Generated 10 email files
+2025-05-04 11:26:06,766 - INFO - Ensured directory exists: output
+2025-05-04 11:26:06,767 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:06,768 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:06,770 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:06,770 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:06,807 - INFO - Workflow completed in 0.04 seconds
+2025-05-04 11:26:06,807 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:06,809 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:06,809 - INFO - Generated 10 email files
+2025-05-04 11:26:06,928 - INFO - Ensured directory exists: output
+2025-05-04 11:26:06,929 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:06,929 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:06,931 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:06,931 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:06,963 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:06,964 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:06,964 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:06,965 - INFO - Generated 10 email files
+2025-05-04 11:26:07,099 - INFO - Ensured directory exists: output
+2025-05-04 11:26:07,101 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:07,101 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:07,102 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:07,103 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:07,130 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:07,131 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:07,131 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:07,132 - INFO - Generated 10 email files
+2025-05-04 11:26:07,266 - INFO - Ensured directory exists: output
+2025-05-04 11:26:07,267 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:07,268 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:07,269 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:07,269 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:07,307 - INFO - Workflow completed in 0.04 seconds
+2025-05-04 11:26:07,307 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:07,309 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:07,309 - INFO - Generated 10 email files
+2025-05-04 11:26:07,453 - INFO - Ensured directory exists: output
+2025-05-04 11:26:07,454 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:07,455 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:07,455 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:07,456 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:07,489 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:07,489 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:07,489 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:07,489 - INFO - Generated 10 email files
+2025-05-04 11:26:07,678 - INFO - Ensured directory exists: output
+2025-05-04 11:26:07,679 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:07,679 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:07,681 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:07,682 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:07,718 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:07,718 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:07,719 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:07,719 - INFO - Generated 10 email files
+2025-05-04 11:26:23,286 - INFO - Ensured directory exists: output
+2025-05-04 11:26:23,286 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:23,286 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:23,286 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:23,290 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:23,324 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:23,326 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:23,326 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:23,327 - INFO - Generated 10 email files
+2025-05-04 11:26:25,653 - INFO - Ensured directory exists: output
+2025-05-04 11:26:25,654 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:25,655 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:25,656 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:25,656 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:25,687 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:25,688 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:25,688 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:25,688 - INFO - Generated 10 email files
+2025-05-04 11:26:26,150 - INFO - Ensured directory exists: output
+2025-05-04 11:26:26,151 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:26,152 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:26,154 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:26,154 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:26,182 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:26,183 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:26,183 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:26,184 - INFO - Generated 10 email files
+2025-05-04 11:26:26,324 - INFO - Ensured directory exists: output
+2025-05-04 11:26:26,324 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:26,326 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:26,326 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:26,326 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:26,366 - INFO - Workflow completed in 0.04 seconds
+2025-05-04 11:26:26,367 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:26,368 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:26,368 - INFO - Generated 10 email files
+2025-05-04 11:26:26,493 - INFO - Ensured directory exists: output
+2025-05-04 11:26:26,494 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:26,494 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:26,495 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:26,495 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:26,531 - INFO - Workflow completed in 0.04 seconds
+2025-05-04 11:26:26,531 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:26,536 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:26,536 - INFO - Generated 10 email files
+2025-05-04 11:26:26,659 - INFO - Ensured directory exists: output
+2025-05-04 11:26:26,662 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:26,662 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:26,664 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:26,664 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:26,691 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:26,698 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:26,698 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:26,698 - INFO - Generated 10 email files
+2025-05-04 11:26:26,844 - INFO - Ensured directory exists: output
+2025-05-04 11:26:26,844 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:26,849 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:26,849 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:26,849 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:26,875 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:26:26,877 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:26,877 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:26,878 - INFO - Generated 10 email files
+2025-05-04 11:26:27,089 - INFO - Ensured directory exists: output
+2025-05-04 11:26:27,091 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:27,091 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:27,092 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:27,092 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:27,140 - INFO - Workflow completed in 0.05 seconds
+2025-05-04 11:26:27,142 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:27,142 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:27,142 - INFO - Generated 10 email files
+2025-05-04 11:26:27,275 - INFO - Ensured directory exists: output
+2025-05-04 11:26:27,275 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:26:27,275 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:26:27,275 - INFO - Loaded data for 14 entries
+2025-05-04 11:26:27,275 - INFO - Starting LangGraph workflow
+2025-05-04 11:26:27,322 - INFO - Workflow completed in 0.05 seconds
+2025-05-04 11:26:27,322 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:26:27,322 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:26:27,323 - INFO - Generated 10 email files
+2025-05-04 11:27:38,427 - INFO - Ensured directory exists: output
+2025-05-04 11:27:38,428 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:27:38,429 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:27:38,429 - INFO - Loaded data for 14 entries
+2025-05-04 11:27:38,430 - INFO - Starting LangGraph workflow
+2025-05-04 11:27:38,453 - INFO - Workflow completed in 0.02 seconds
+2025-05-04 11:27:38,453 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:27:38,454 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:27:38,454 - INFO - Generated 10 email files
+2025-05-04 11:27:39,491 - INFO - Ensured directory exists: output
+2025-05-04 11:27:39,491 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:27:39,493 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:27:39,494 - INFO - Loaded data for 14 entries
+2025-05-04 11:27:39,495 - INFO - Starting LangGraph workflow
+2025-05-04 11:27:39,525 - INFO - Workflow completed in 0.03 seconds
+2025-05-04 11:27:39,526 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:27:39,527 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:27:39,528 - INFO - Generated 10 email files
+2025-05-04 11:27:39,675 - INFO - Ensured directory exists: output
+2025-05-04 11:27:39,675 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:27:39,677 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:27:39,677 - INFO - Loaded data for 14 entries
+2025-05-04 11:27:39,679 - INFO - Starting LangGraph workflow
+2025-05-04 11:27:39,719 - INFO - Workflow completed in 0.04 seconds
+2025-05-04 11:27:39,720 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:27:39,720 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:27:39,720 - INFO - Generated 10 email files
+2025-05-04 11:27:39,863 - INFO - Ensured directory exists: output
+2025-05-04 11:27:39,864 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:27:39,865 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:27:39,865 - INFO - Loaded data for 14 entries
+2025-05-04 11:27:39,866 - INFO - Starting LangGraph workflow
+2025-05-04 11:27:39,902 - INFO - Workflow completed in 0.04 seconds
+2025-05-04 11:27:39,902 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:27:39,904 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:27:39,904 - INFO - Generated 10 email files
+2025-05-04 11:27:40,067 - INFO - Ensured directory exists: output
+2025-05-04 11:27:40,067 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:27:40,067 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:27:40,067 - INFO - Loaded data for 14 entries
+2025-05-04 11:27:40,067 - INFO - Starting LangGraph workflow
+2025-05-04 11:27:40,112 - INFO - Workflow completed in 0.04 seconds
+2025-05-04 11:27:40,113 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:27:40,114 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:27:40,114 - INFO - Generated 10 email files
+2025-05-04 11:29:58,929 - INFO - Ensured directory exists: output
+2025-05-04 11:29:58,934 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:29:58,934 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:29:58,937 - INFO - Loaded data for 14 entries
+2025-05-04 11:29:58,937 - INFO - Starting LangGraph workflow
+2025-05-04 11:29:58,982 - INFO - Workflow completed in 0.05 seconds
+2025-05-04 11:29:58,983 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:29:58,983 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:29:58,984 - INFO - Generated 10 email files
+2025-05-04 11:36:00,713 - INFO - Ensured directory exists: output
+2025-05-04 11:36:00,714 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:36:00,715 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:36:00,715 - INFO - Loaded data for 23 entries
+2025-05-04 11:36:00,716 - INFO - Starting LangGraph workflow
+2025-05-04 11:39:45,293 - INFO - Workflow completed in 224.58 seconds
+2025-05-04 11:39:45,293 - INFO - Verified output file exists: output/summary.md
+2025-05-04 11:39:45,293 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 11:39:45,293 - INFO - Generated 10 email files
+2025-05-04 11:54:49,623 - INFO - Ensured directory exists: output
+2025-05-04 11:54:49,625 - INFO - Ensured directory exists: output/emails
+2025-05-04 11:54:49,629 - INFO - Loading patient data from data/patients.json
+2025-05-04 11:54:49,630 - INFO - Loaded data for 23 entries
+2025-05-04 11:54:49,631 - INFO - Starting LangGraph workflow
+2025-05-04 11:58:17,129 - ERROR - Unexpected error during pipeline execution: 'charmap' codec can't encode characters in position 2-8: character maps to <undefined>
+2025-05-04 12:12:18,281 - INFO - Ensured directory exists: output
+2025-05-04 12:12:18,284 - INFO - Ensured directory exists: output/emails
+2025-05-04 12:12:18,287 - INFO - Loading patient data from data/patients.json
+2025-05-04 12:12:18,290 - INFO - Loaded data for 23 entries
+2025-05-04 12:12:18,297 - INFO - Starting LangGraph workflow
+2025-05-04 12:17:11,555 - INFO - Workflow completed in 293.26 seconds
+2025-05-04 12:17:11,559 - INFO - Verified output file exists: output/summary.md
+2025-05-04 12:17:11,559 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 12:17:11,561 - INFO - Generated 6 email files
+2025-05-04 12:26:45,119 - INFO - Ensured directory exists: output
+2025-05-04 12:26:45,127 - INFO - Ensured directory exists: output/emails
+2025-05-04 12:26:45,138 - INFO - Loading patient data from data/patients.json
+2025-05-04 12:26:45,140 - INFO - Loaded data for 23 entries
+2025-05-04 12:26:45,140 - INFO - Starting LangGraph workflow
+2025-05-04 12:30:30,661 - INFO - Workflow completed in 225.52 seconds
+2025-05-04 12:30:30,664 - INFO - Verified output file exists: output/summary.md
+2025-05-04 12:30:30,665 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 12:30:30,666 - INFO - Generated 6 email files
+2025-05-04 12:38:35,954 - INFO - Ensured directory exists: output
+2025-05-04 12:38:35,967 - INFO - Ensured directory exists: output/emails
+2025-05-04 12:38:35,989 - INFO - Loading patient data from data/patients.json
+2025-05-04 12:38:36,034 - INFO - Loaded data for 23 entries
+2025-05-04 12:38:36,040 - INFO - Starting LangGraph workflow
+2025-05-04 12:42:44,994 - INFO - Workflow completed in 248.94 seconds
+2025-05-04 12:42:44,996 - INFO - Verified output file exists: output/summary.md
+2025-05-04 12:42:44,999 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 12:42:44,999 - INFO - Generated 6 email files
+2025-05-04 12:51:21,071 - INFO - Ensured directory exists: output
+2025-05-04 12:51:21,073 - INFO - Ensured directory exists: output/emails
+2025-05-04 12:51:21,077 - INFO - Loading patient data from data/patients.json
+2025-05-04 12:51:21,081 - INFO - Loaded data for 23 entries
+2025-05-04 12:51:21,081 - INFO - Starting LangGraph workflow
+2025-05-04 12:52:30,994 - INFO - Workflow completed in 69.91 seconds
+2025-05-04 12:52:30,996 - INFO - Verified output file exists: output/summary.md
+2025-05-04 12:52:30,997 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 12:52:30,997 - INFO - Generated 6 email files
+2025-05-04 12:53:17,423 - INFO - Ensured directory exists: output
+2025-05-04 12:53:17,430 - INFO - Ensured directory exists: output/emails
+2025-05-04 12:53:17,437 - INFO - Loading patient data from data/patients.json
+2025-05-04 12:53:17,442 - INFO - Loaded data for 23 entries
+2025-05-04 12:53:17,444 - INFO - Starting LangGraph workflow
+2025-05-04 12:53:25,705 - INFO - Workflow completed in 8.26 seconds
+2025-05-04 12:53:25,707 - INFO - Verified output file exists: output/summary.md
+2025-05-04 12:53:25,708 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 12:53:25,709 - INFO - Generated 6 email files
+2025-05-04 12:54:21,536 - INFO - Ensured directory exists: output
+2025-05-04 12:54:21,537 - INFO - Ensured directory exists: output/emails
+2025-05-04 12:54:21,540 - INFO - Loading patient data from data/patients.json
+2025-05-04 12:54:21,544 - INFO - Loaded data for 23 entries
+2025-05-04 12:54:21,546 - INFO - Starting LangGraph workflow
+2025-05-04 12:54:29,444 - INFO - Workflow completed in 7.89 seconds
+2025-05-04 12:54:29,444 - INFO - Verified output file exists: output/summary.md
+2025-05-04 12:54:29,444 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 12:54:29,450 - INFO - Generated 6 email files
+2025-05-04 13:09:08,241 - INFO - Ensured directory exists: output
+2025-05-04 13:09:08,244 - INFO - Ensured directory exists: output/emails
+2025-05-04 13:09:08,250 - INFO - Loading patient data from data/patients.json
+2025-05-04 13:09:08,253 - INFO - Loaded data for 23 entries
+2025-05-04 13:09:08,253 - INFO - Starting LangGraph workflow
+2025-05-04 13:09:16,536 - INFO - Workflow completed in 8.28 seconds
+2025-05-04 13:09:16,536 - INFO - Verified output file exists: output/summary.md
+2025-05-04 13:09:16,536 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 13:09:16,536 - INFO - Generated 6 email files
+2025-05-04 13:10:50,951 - INFO - Ensured directory exists: output
+2025-05-04 13:10:50,955 - INFO - Ensured directory exists: output/emails
+2025-05-04 13:10:50,957 - INFO - Loading patient data from data/patients.json
+2025-05-04 13:10:50,959 - INFO - Loaded data for 23 entries
+2025-05-04 13:10:50,961 - INFO - Starting LangGraph workflow
+2025-05-04 13:10:59,188 - INFO - Workflow completed in 8.23 seconds
+2025-05-04 13:10:59,190 - INFO - Verified output file exists: output/summary.md
+2025-05-04 13:10:59,195 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 13:10:59,195 - INFO - Generated 6 email files
+2025-05-04 13:12:04,109 - INFO - Ensured directory exists: output
+2025-05-04 13:12:04,115 - INFO - Ensured directory exists: output/emails
+2025-05-04 13:12:04,119 - INFO - Loading patient data from data/patients.json
+2025-05-04 13:12:04,125 - INFO - Loaded data for 23 entries
+2025-05-04 13:12:04,125 - INFO - Starting LangGraph workflow
+2025-05-04 13:17:12,950 - INFO - Workflow completed in 308.82 seconds
+2025-05-04 13:17:12,951 - INFO - Verified output file exists: output/summary.md
+2025-05-04 13:17:12,951 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 13:17:12,951 - INFO - Generated 6 email files
+2025-05-04 13:42:35,198 - INFO - Ensured directory exists: output
+2025-05-04 13:42:35,198 - INFO - Ensured directory exists: output/emails
+2025-05-04 13:42:35,200 - INFO - Loading patient data from data/patients.json
+2025-05-04 13:42:35,200 - INFO - Loaded data for 23 entries
+2025-05-04 13:42:35,202 - INFO - Starting LangGraph workflow
+2025-05-04 13:47:39,259 - INFO - Workflow completed in 304.06 seconds
+2025-05-04 13:47:39,259 - INFO - Verified output file exists: output/summary.md
+2025-05-04 13:47:39,259 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 13:47:39,261 - INFO - Generated 6 email files
+2025-05-04 15:54:32,325 - INFO - Ensured directory exists: output
+2025-05-04 15:54:32,327 - INFO - Ensured directory exists: output/emails
+2025-05-04 15:54:32,331 - INFO - Loading patient data from data/patients.json
+2025-05-04 15:54:32,333 - INFO - Loaded data for 23 entries
+2025-05-04 15:54:32,334 - INFO - Starting LangGraph workflow
+2025-05-04 15:59:57,864 - INFO - Workflow completed in 325.53 seconds
+2025-05-04 15:59:57,864 - INFO - Verified output file exists: output/summary.md
+2025-05-04 15:59:57,864 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 15:59:57,870 - INFO - Generated 6 email files
+2025-05-04 16:15:08,557 - INFO - Ensured directory exists: output
+2025-05-04 16:15:08,563 - INFO - Ensured directory exists: output/emails
+2025-05-04 16:15:08,575 - INFO - Loading patient data from data/patients.json
+2025-05-04 16:15:08,579 - INFO - Loaded data for 23 entries
+2025-05-04 16:15:08,581 - INFO - Starting LangGraph workflow
+2025-05-04 16:21:00,765 - INFO - Workflow completed in 352.18 seconds
+2025-05-04 16:21:00,765 - INFO - Verified output file exists: output/summary.md
+2025-05-04 16:21:00,769 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 16:21:00,771 - INFO - Generated 6 email files
+2025-05-04 16:22:43,142 - INFO - Ensured directory exists: output
+2025-05-04 16:22:43,147 - INFO - Ensured directory exists: output/emails
+2025-05-04 16:22:43,154 - INFO - Loading patient data from data/patients.json
+2025-05-04 16:22:43,156 - INFO - Loaded data for 23 entries
+2025-05-04 16:22:43,156 - INFO - Starting LangGraph workflow
+2025-05-04 16:29:36,775 - INFO - Workflow completed in 413.62 seconds
+2025-05-04 16:29:36,777 - INFO - Verified output file exists: output/summary.md
+2025-05-04 16:29:36,782 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 16:29:36,784 - INFO - Generated 6 email files
+2025-05-04 16:38:50,088 - INFO - Ensured directory exists: output
+2025-05-04 16:38:50,094 - INFO - Ensured directory exists: output/emails
+2025-05-04 16:38:50,098 - INFO - Loading patient data from data/patients.json
+2025-05-04 16:38:50,100 - INFO - Loaded data for 23 entries
+2025-05-04 16:38:50,102 - INFO - Starting LangGraph workflow
+2025-05-04 16:43:36,262 - INFO - Workflow completed in 286.16 seconds
+2025-05-04 16:43:36,265 - INFO - Verified output file exists: output/summary.md
+2025-05-04 16:43:36,265 - INFO - Verified output file exists: output/risk_labels.json
+2025-05-04 16:43:36,265 - INFO - Generated 6 email files
+2025-05-04 17:00:03,073 - INFO - Ensured directory exists: output
+2025-05-04 17:00:03,075 - INFO - Ensured directory exists: output/emails
+2025-05-04 17:00:03,079 - INFO - Loading patient data from data/patients.json
+2025-05-04 17:00:03,085 - INFO - Loaded data for 23 entries
+2025-05-04 17:00:03,085 - INFO - Starting LangGraph workflow

@@ -124,20 +124,27 @@ def load_risk_labels():
 def load_summary():
     """Load analysis summary."""
     try:
-        with open("output/summary.md", "r") as f:
-            summary = f.read()
-        print("[DEBUG] Summary loaded:", summary)
+        with open("output/summary.md", "rb") as f:
+            summary = f.read().decode('utf-8')
+        print(f"[DEBUG] Summary loaded (raw content): {summary}")
         return summary
     except FileNotFoundError:
         print("[DEBUG] Summary file not found.")
         return "Summary file not found."
 
-def load_outreach_emails():
+def load_outreach_emails(valid_patient_names=None):
     """Load all outreach email drafts."""
     emails = {}
-    for email_file in Path("output/emails").glob("*.txt"):
-        with open(email_file, "r") as f:
-            emails[email_file.stem] = f.read()
+    email_files = list(Path("output/emails").glob("*.txt"))
+    print(f"[DEBUG] Email files found: {[str(f) for f in email_files]}")
+    for email_file in email_files:
+        # Normalize filename to match patient name format
+        name = email_file.stem.replace("_", " ")
+        print(f"[DEBUG] Processing email file: {email_file}, normalized name: {name}")
+        if (not valid_patient_names) or (name in valid_patient_names) or (email_file.stem in valid_patient_names):
+            with open(email_file, "r", encoding="utf-8") as f:
+                emails[email_file.stem] = f.read()
+    print(f"[DEBUG] Emails loaded: {list(emails.keys())}")
     return emails
 
 def get_risk_color(risk_level):
@@ -149,55 +156,68 @@ def get_risk_color(risk_level):
     }.get(risk_level, "")
 
 def main():
-    st.title("🏥 HospitalGPT2 Dashboard")
+    st.title("\U0001F3E5 HospitalGPT2 Dashboard")
     
     # Sidebar for controls
     with st.sidebar:
         st.header("Controls")
+        if 'analysis_done' not in st.session_state:
+            st.session_state.analysis_done = False
         if st.button("Analyze Patients", type="primary"):
+            st.session_state.analysis_done = False  # Clear previous message
+            # Clear any cached data
+            if hasattr(st, 'cache_clear'):
+                st.cache_clear()
+            elif hasattr(st, 'cache_resource'):
+                st.cache_resource.clear()
             with st.spinner("Running analysis pipeline..."):
                 try:
                     run_pipeline()
-                    st.success("Analysis completed successfully!")
+                    st.session_state.analysis_done = True
+                    st.rerun()
                 except Exception as e:
                     st.error(f"Error during analysis: {str(e)}")
+        if st.session_state.analysis_done:
+            st.success("Analysis completed successfully!")
     
     # Main content area
-    col1, col2 = st.columns([2, 1])
+    st.header("Patient List")
+    patient_data = load_patient_data()
+    patients = [entry["resource"] for entry in patient_data["entry"] 
+               if entry["resource"]["resourceType"] == "Patient"]
     
-    with col1:
-        st.header("Patient List")
-        patient_data = load_patient_data()
-        patients = [entry["resource"] for entry in patient_data["entry"] 
-                   if entry["resource"]["resourceType"] == "Patient"]
-        
-        # Create patient table
-        patient_table = []
-        for patient in patients:
-            name = f"{patient['name'][0]['given'][0]} {patient['name'][0]['family']}"
-            birthDate = patient.get('birthDate', 'N/A')
-            if birthDate != 'N/A':
-                birthDate = datetime.strptime(birthDate, "%Y-%m-%d")
-                age = (datetime.now() - birthDate).days // 365
-            else:
-                age = 'N/A'
-            email = next((t['value'] for t in patient.get('telecom', []) 
-                         if t.get('system') == 'email'), 'N/A')
-            patient_table.append({
-                "Name": name,
-                "Age": age,
-                "Email": email
-            })
-        
-        st.dataframe(pd.DataFrame(patient_table), use_container_width=True)
+    # Create patient table
+    patient_table = []
+    for patient in patients:
+        name = f"{patient['name'][0]['given'][0]} {patient['name'][0]['family']}"
+        birthDate = patient.get('birthDate', 'N/A')
+        if birthDate != 'N/A':
+            birthDate = datetime.strptime(birthDate, "%Y-%m-%d")
+            age = (datetime.now() - birthDate).days // 365
+        else:
+            age = 'N/A'
+        email = next((t['value'] for t in patient.get('telecom', []) 
+                     if t.get('system') == 'email'), 'N/A')
+        patient_table.append({
+            "Name": name,
+            "Age": age,
+            "Email": email
+        })
     
-    with col2:
-        st.header("Summary Statistics")
-        try:
-            summary = load_summary()
+    st.dataframe(pd.DataFrame(patient_table), use_container_width=True)
+
+    st.header("Summary Statistics")
+    try:
+        summary = load_summary()
+        print(f"[DEBUG] Summary content length: {len(summary) if summary else 0}")
+        print(f"[DEBUG] Summary content type: {type(summary)}")
+        if summary and summary.strip() and summary != "Summary file not found." and not summary.startswith("[ERROR]"):
             st.markdown(summary)
-        except FileNotFoundError:
-            st.info("Run the analysis to see summary statistics")
+        else:
+            st.warning("No summary generated or an error occurred. Please check the analysis pipeline and API status.")
+    except Exception as e:
+        print(f"[DEBUG] Error loading summary: {str(e)}")
+        st.info("Run the analysis to see summary statistics")
     
     # Risk Levels Section
     st.header("Risk Assessment")
@@ -234,13 +254,17 @@ def main():
     # Outreach Emails Section
     st.header("Outreach Emails")
     try:
-        emails = load_outreach_emails()
+        patient_names = set(f"{p['name'][0]['given'][0]}_{p['name'][0]['family']}" for p in patients)
+        emails = load_outreach_emails(valid_patient_names=patient_names)
         for patient_name, email_content in emails.items():
             with st.expander(f"Email for {patient_name}"):
-                st.markdown(
-                    f'<div class="email-content">{email_content}</div>',
-                    unsafe_allow_html=True
-                )
+                if email_content.strip() and not email_content.startswith("[ERROR]"):
+                    st.markdown(
+                        f'<div class="email-content">{email_content}</div>',
+                        unsafe_allow_html=True
+                    )
+                else:
+                    st.warning("No email content generated or an error occurred for this patient. Please check the analysis pipeline and API status.")
     except FileNotFoundError:
         st.info("Run the analysis to see outreach emails")
 

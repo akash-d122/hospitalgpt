@@ -1,50 +1,70 @@
-# Hospital GPT
+# HospitalGPT2: Multi-Agent Population Health Platform
 
-This project is an implementation of [AutoGen](https://github.com/microsoft/autogen) to emulate the population health functions within a health system.
+HospitalGPT2 is a modular, agent-based platform for population health management, built with LangGraph and DeepSeek R1 (via OpenRouter). It provides a modern, interactive dashboard for analyzing patient cohorts, risk stratification, and generating personalized outreach—all powered by reusable agent subfunctions and a robust multi-agent workflow.
 
-The end goal of the project is to develop an outreach plan for specific conditions, as inputed by the user. There are a number of team members involved in the project to complete this task.
-- Hospital Administration / Planner
-- Epidemiologist
-- Data Analyst
-- Outreach coordinator
+## Architecture Overview
 
-## Organization
-The agents interact as follows:
+The system is organized as follows:
+
+- **/agents/**: Contains modular agents (Data Analyst, Risk Assessor, Outreach Assistant, Workflow)
+- **/utils/**: Shared utilities for FHIR data parsing, patient filtering, and API helpers
+- **/data/**: Patient data in JSON format
+- **/output/**: All generated outputs (summary, risk labels, outreach emails)
+- **/ui/**: Streamlit dashboard for interactive analysis
+- **/prompts/**: (Optional) Prompt templates for agent LLMs
+
+### Agent Workflow (LangGraph)
+
 ```mermaid
 flowchart LR;
-    A(User) --> B(Planner);
-    B <--> C(Critic);
-    B --> D(Epidemiologist);
-    D --> E(Data Analyst);
-    F <--> H[(FHIR Server)];
-    E <-- 1 --> F(Code Executor)
-    E -- 2 --> G(Outreach Coordinator);
-    G --> I((out.csv));
+    A[DataAnalyst] --> B[RiskAssessor] --> C[OutreachAssistant]
+    C --> D[Output Files]
 ```
 
-More details can be found in my [Medium Article](https://medium.com/@micklynch_6905/hospitalgpt-managing-a-patient-population-with-autogen-powered-by-gpt-4-mixtral-8x7b-ef9f54f275f1).
+- **DataAnalyst**: Summarizes patient cohort and generates markdown summary
+- **RiskAssessor**: Assigns risk labels and explanations
+- **OutreachAssistant**: Generates personalized outreach emails
 
-### Running Locally
-In order to run the code locally, you need to create the following files:
-1. OAI_CONFIG_LIST
-2. .env
+## Running the Platform
 
-The contents of OAI_CONFIG_LIST are:
-```
-[
-  {
-   "model": "mistralai/Mixtral-8x7B-Instruct-v0.1",
-   "api_key": "xxxxxxxxxxxxxxxxxxxx",
-   "base_url": "https://api.deepinfra.com/v1/openai"
-  },
-  {
-    "model": "gpt-4",
-    "api_key": "xxxxxxxxxxxxxxxxxxxxxxx"
-  }
-]
-```
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Configure your `.env` file with your OpenRouter API key and model (see `.env.example`).
+3. Launch the dashboard:
+   ```bash
+   streamlit run ui/app.py
+   ```
 
-The contents of .env file are:
-```
-OPENAI_API_KEY=xxxxxxxxxxxxxxxxx
-```
+## User Interface (UI) Overview
+
+- **Analyze Patients**: Button to trigger the full analysis pipeline
+- **Patient List**: Table of all patients with demographics
+- **Summary Statistics**: Markdown summary of the cohort
+- **Risk Assessment**: Color-coded risk levels and explanations
+- **Outreach Emails**: Professional, personalized email drafts for each patient
+
+![HospitalGPT2 UI Screenshot](docs/hospitalgpt2_ui_screenshot.png)
+
+## Comparison: Legacy Script vs. Agent-Based Pipeline
+
+| Feature                        | Legacy Script (`hospitalgpt.py`) | Agent-Based Pipeline (LangGraph) |
+|--------------------------------|----------------------------------|----------------------------------|
+| Architecture                   | Monolithic, procedural           | Modular, multi-agent (LangGraph) |
+| Extensibility                  | Low                              | High (easy to add/replace agents)|
+| Model Integration              | OpenAI/Mixtral (via OAI config)  | DeepSeek R1 via OpenRouter       |
+| Output Files                   | CSV, plain text                  | Markdown, JSON, emails           |
+| UI                             | None/CLI only                    | Modern Streamlit dashboard       |
+| Patient Data Handling          | Script-level logic               | Reusable utilities, FHIR support |
+| Risk & Outreach Logic          | Inline, hardcoded                | Dedicated agents, prompt-driven  |
+| Parallel/Async Processing      | No                               | Possible with LangGraph          |
+| Error Handling                 | Minimal                          | Robust, user-facing in UI        |
+| Customization                  | Difficult                        | Easy via agent prompts/functions |
+
+**Summary:**
+- The agent-based pipeline is more maintainable, extensible, and user-friendly.
+- The UI enables non-technical users to interact with the system and review results visually.
+- The modular agent design allows for rapid experimentation and future expansion.
+
+---
