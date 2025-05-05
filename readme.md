@@ -1,6 +1,6 @@
 # HospitalGPT2: Multi-Agent Population Health Platform
 
-HospitalGPT2 is a modular, agent-based platform for population health management, built with LangGraph and DeepSeek R1 (via OpenRouter). It provides a modern, interactive dashboard for analyzing patient cohorts, risk stratification, and generating personalized outreach—all powered by reusable agent subfunctions and a robust multi-agent workflow.
+HospitalGPT2 is a modular, agent-based platform for population health management, built with LangGraph and Google Gemma 3 27B (via OpenRouter). It provides a modern, interactive dashboard for analyzing patient cohorts, risk stratification, and generating personalized outreach—all powered by reusable agent subfunctions and a robust multi-agent workflow.
 
 ## Architecture Overview
 
@@ -53,7 +53,7 @@ flowchart LR;
 |--------------------------------|----------------------------------|----------------------------------|
 | Architecture                   | Monolithic, procedural           | Modular, multi-agent (LangGraph) |
 | Extensibility                  | Low                              | High (easy to add/replace agents)|
-| Model Integration              | OpenAI/Mixtral (via OAI config)  | DeepSeek R1 via OpenRouter       |
+| Model Integration              | OpenAI/Mixtral (via OAI config)  | Google Gemma 3 27B via OpenRouter       |
 | Output Files                   | CSV, plain text                  | Markdown, JSON, emails           |
 | UI                             | None/CLI only                    | Modern Streamlit dashboard       |
 | Patient Data Handling          | Script-level logic               | Reusable utilities, FHIR support |

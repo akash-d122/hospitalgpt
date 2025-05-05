@@ -213,7 +213,7 @@ class FHIRQueryHelper:
             'patient_url': f"{FHIRQueryHelper.BASE_URL}/Patient/{patient['id']}?_pretty=true"
         }
 
-def openrouter_chat(messages: List[Dict[str, str]], model: str = "deepseek/deepseek-r1:free") -> str:
+def openrouter_chat(messages: List[Dict[str, str]], model: str = "google/gemma-3-27b-it:free") -> str:
     """Use AI to help write messages to patients.
     
     This function:

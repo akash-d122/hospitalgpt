@@ -1057,3 +1057,39 @@ tornado.websocket.WebSocketClosedError
 2025-05-04 19:03:46,915 - INFO - Verified output file exists: output/summary.md
 2025-05-04 19:03:46,915 - INFO - Verified output file exists: output/risk_labels.json
 2025-05-04 19:03:46,915 - INFO - Generated 6 email files
+2025-05-05 12:58:33,712 - INFO - Created directory: output
+2025-05-05 12:58:33,713 - INFO - Created directory: output/emails
+2025-05-05 12:58:33,721 - INFO - Loading patient records from data/patients.json
+2025-05-05 12:58:33,723 - INFO - Found 23 patient records to analyze
+2025-05-05 12:58:33,723 - INFO - Starting patient analysis workflow
+2025-05-05 13:00:23,409 - INFO - Created directory: output
+2025-05-05 13:00:23,428 - INFO - Created directory: output/emails
+2025-05-05 13:00:23,430 - INFO - Loading patient records from data/patients.json
+2025-05-05 13:00:23,433 - INFO - Found 23 patient records to analyze
+2025-05-05 13:00:23,433 - INFO - Starting patient analysis workflow
+2025-05-05 13:03:27,271 - INFO - Analysis completed in 293.55 seconds
+2025-05-05 13:03:27,271 - INFO - Found output file: output/summary.md
+2025-05-05 13:03:27,271 - INFO - Found output file: output/risk_labels.json
+2025-05-05 13:03:27,271 - INFO - Created 6 email drafts
+2025-05-05 13:04:20,086 - INFO - Analysis completed in 236.65 seconds
+2025-05-05 13:04:20,086 - INFO - Found output file: output/summary.md
+2025-05-05 13:04:20,086 - INFO - Found output file: output/risk_labels.json
+2025-05-05 13:04:20,086 - INFO - Created 6 email drafts
+2025-05-05 15:42:29,296 - INFO - Created directory: output
+2025-05-05 15:42:29,297 - INFO - Created directory: output/emails
+2025-05-05 15:42:29,304 - INFO - Loading patient records from data/patients.json
+2025-05-05 15:42:29,307 - INFO - Found 23 patient records to analyze
+2025-05-05 15:42:29,309 - INFO - Starting patient analysis workflow
+2025-05-05 15:46:08,976 - INFO - Analysis completed in 219.67 seconds
+2025-05-05 15:46:08,978 - INFO - Found output file: output/summary.md
+2025-05-05 15:46:08,979 - INFO - Found output file: output/risk_labels.json
+2025-05-05 15:46:08,980 - INFO - Created 6 email drafts
+2025-05-05 15:59:03,390 - INFO - Created directory: output
+2025-05-05 15:59:03,396 - INFO - Created directory: output/emails
+2025-05-05 15:59:03,404 - INFO - Loading patient records from data/patients.json
+2025-05-05 15:59:03,404 - INFO - Found 23 patient records to analyze
+2025-05-05 15:59:03,426 - INFO - Starting patient analysis workflow
+2025-05-05 16:01:55,038 - INFO - Analysis completed in 171.61 seconds
+2025-05-05 16:01:55,041 - INFO - Found output file: output/summary.md
+2025-05-05 16:01:55,042 - INFO - Found output file: output/risk_labels.json
+2025-05-05 16:01:55,042 - INFO - Created 6 email drafts

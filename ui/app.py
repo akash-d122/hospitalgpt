@@ -13,7 +13,7 @@ from run_graph import run_pipeline
 
 # Set up the dashboard page with a hospital theme
 st.set_page_config(
-    page_title="HospitalGPT2 Dashboard",
+    page_title="HospitalGPT Dashboard",
     page_icon="🏥",
     layout="wide"
 )
@@ -205,7 +205,7 @@ def main():
     3. Risk assessments for each patient
     4. Personalized emails we've written
     """
-    st.title("\U0001F3E5 HospitalGPT2 Dashboard")
+    st.title("\U0001F3E5 HospitalGPT Dashboard")
     
     # Add controls in the sidebar
     with st.sidebar:

@@ -2,7 +2,7 @@
 name = "hospitalgpt"
 version = "0.1.0"
 description = ""
-authors = ["Mick Lynch <mick.lynch@gmail.com>"]
+authors = ["Akash <akashduddekunta@gmail.com>"]
 readme = "readme.md"
 
 [tool.poetry.dependencies]
