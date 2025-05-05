@@ -4,15 +4,21 @@ from typing import List, Dict, Union, Any
 from .query_helpers import FHIRQueryHelper
 
 def calculate_birthdate_range(min_age: int, max_age: int) -> tuple[str, str]:
-    """
-    Calculate the birthdate range for filtering patients based on age criteria.
+    """Figure out what birthdates to look for when searching for patients.
+    
+    When we want to find patients of a certain age, we need to:
+    1. Take today's date
+    2. Subtract the minimum age to get the oldest birthdate
+    3. Subtract the maximum age to get the youngest birthdate
     
     Args:
-        min_age (int): Minimum age (inclusive)
-        max_age (int): Maximum age (inclusive)
+        min_age: The youngest age we want to find
+        max_age: The oldest age we want to find
         
     Returns:
-        tuple[str, str]: A tuple containing (min_birthdate, max_birthdate) in YYYY-MM-DD format
+        Two dates in YYYY-MM-DD format:
+        - The oldest birthdate to look for
+        - The youngest birthdate to look for
     """
     today = datetime.date.today()
     max_birthdate = today - relativedelta(years=min_age)
@@ -20,15 +26,19 @@ def calculate_birthdate_range(min_age: int, max_age: int) -> tuple[str, str]:
     return min_birthdate.strftime('%Y-%m-%d'), max_birthdate.strftime('%Y-%m-%d')
 
 def fetch_conditions(min_birthdate: str, max_birthdate: str) -> Dict[str, Any]:
-    """
-    Fetch conditions from FHIR API based on birthdate range.
+    """Get health conditions for patients in a certain age range.
+    
+    We use the FHIR database to find:
+    - What conditions patients have
+    - How serious they are
+    - When they started
     
     Args:
-        min_birthdate (str): Minimum birthdate in YYYY-MM-DD format
-        max_birthdate (str): Maximum birthdate in YYYY-MM-DD format
+        min_birthdate: The oldest birthdate to look for
+        max_birthdate: The youngest birthdate to look for
         
     Returns:
-        Dict[str, Any]: JSON response from FHIR API
+        All the health conditions we found
     """
     params = {
         '_pretty': 'true',
@@ -38,15 +48,19 @@ def fetch_conditions(min_birthdate: str, max_birthdate: str) -> Dict[str, Any]:
     return FHIRQueryHelper.make_request('Condition', params)
 
 def filter_conditions_by_name(conditions: Dict[str, Any], condition_name: str) -> List[Dict[str, Any]]:
-    """
-    Filter conditions by condition name.
+    """Find patients with a specific health condition.
+    
+    We look through all the conditions to find:
+    - Exact matches for the condition name
+    - Similar conditions that might be related
+    - Different ways doctors might have written it
     
     Args:
-        conditions (Dict[str, Any]): Conditions data from FHIR API
-        condition_name (str): Name of condition to filter by
+        conditions: All the health conditions we found
+        condition_name: The specific condition we're looking for
         
     Returns:
-        List[Dict[str, Any]]: Filtered list of conditions
+        A list of matching conditions
     """
     if 'entry' not in conditions or not conditions['entry']:
         return []
@@ -57,27 +71,38 @@ def filter_conditions_by_name(conditions: Dict[str, Any], condition_name: str) -
                   for cond in entry['resource']['code']['coding'])]
 
 def fetch_patient_data(patient_id: str) -> Dict[str, Any]:
-    """
-    Fetch patient data from FHIR API.
+    """Get all the information we have about a specific patient.
+    
+    This includes:
+    - Their basic information
+    - Medical history
+    - Test results
+    - Contact details
     
     Args:
-        patient_id (str): Patient ID
+        patient_id: The patient's unique ID number
         
     Returns:
-        Dict[str, Any]: Patient data from FHIR API
+        Everything we know about this patient
     """
     return FHIRQueryHelper.make_request(f'Patient/{patient_id}')
 
 def extract_patient_info(patient: Dict[str, Any], condition: Dict[str, Any]) -> Dict[str, Union[str, int, None]]:
-    """
-    Extract relevant information from patient and condition data.
+    """Pull out the most important information about a patient.
+    
+    We focus on:
+    - Their name and age
+    - Where they live
+    - Their medical record number
+    - How to contact them
+    - Their health condition
     
     Args:
-        patient (Dict[str, Any]): Patient data
-        condition (Dict[str, Any]): Condition data
+        patient: All their medical records
+        condition: Information about their health condition
         
     Returns:
-        Dict[str, Union[str, int, None]]: Extracted patient information
+        The key information we need to help them
     """
     patient_id = condition['resource']['subject']['reference'].split('/')[1]
     
@@ -108,24 +133,36 @@ def extract_patient_info(patient: Dict[str, Any], condition: Dict[str, Any]) -> 
     }
 
 def get_patients_between_ages_and_condition(min_age: int, max_age: int, condition: str) -> List[Dict[str, Union[str, int, None]]]:
-    """
-    Fetches and returns a list of patients from a specified FHIR R4 API endpoint based on the patients' age range and condition.
+    """Find patients who:
+    1. Are between certain ages
+    2. Have a specific health condition
+    
+    This helps us:
+    - Identify at-risk patients
+    - Plan outreach programs
+    - Track health trends
     
     Args:
-        min_age (int): The minimum age to filter patients by (inclusive)
-        max_age (int): The maximum age to filter patients by (inclusive)
-        condition (str): The specific health condition to filter patients by
+        min_age: The youngest age to look for
+        max_age: The oldest age to look for
+        condition: The health condition to look for
         
     Returns:
-        List[Dict[str, Union[str, int, None]]]: List of patient dictionaries containing relevant information
+        A list of patients who match our criteria
     """
+    # Figure out what birthdates to look for
     min_birthdate, max_birthdate = calculate_birthdate_range(min_age, max_age)
+    
+    # Get all conditions in that age range
     conditions_data = fetch_conditions(min_birthdate, max_birthdate)
+    
+    # Find the specific condition we're looking for
     filtered_conditions = filter_conditions_by_name(conditions_data, condition)
     
     if not filtered_conditions:
         return []
     
+    # Get information about each matching patient
     patients = []
     for cond in filtered_conditions:
         patient_id = cond['resource']['subject']['reference'].split('/')[1]

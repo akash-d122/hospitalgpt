@@ -6,22 +6,23 @@ from datetime import datetime
 import sys
 import os
 
-# Add the project root to the Python path
+# Add the project root to the Python path so we can import our modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from run_graph import run_pipeline
 
-# Configure the page
+# Set up the dashboard page with a hospital theme
 st.set_page_config(
     page_title="HospitalGPT2 Dashboard",
     page_icon="🏥",
     layout="wide"
 )
 
-# Custom CSS for better styling
+# Custom styling for the dashboard
+# We use CSS to make the interface more user-friendly and accessible
 st.markdown("""
     <style>
-    /* Accessibility: Ensure all badge and email content colors have sufficient contrast */
+    /* Make buttons more visible and easier to click */
     .stButton>button {
         width: 100%;
         background-color: #4CAF50;
@@ -34,6 +35,8 @@ st.markdown("""
     .stButton>button:hover {
         background-color: #45a049;
     }
+    
+    /* Style for high-risk patients - red background */
     .risk-high {
         background-color: #ffcdd2;
         color: #b71c1c;
@@ -46,9 +49,11 @@ st.markdown("""
     .risk-high:hover {
         box-shadow: 0 0 0 2px #ffcdd2;
     }
+    
+    /* Style for medium-risk patients - yellow background */
     .risk-medium {
-        background-color: #ffe082; /* More saturated yellow */
-        color: #ff6f00; /* Strong orange text for contrast */
+        background-color: #ffe082;
+        color: #ff6f00;
         padding: 5px 10px;
         border-radius: 5px;
         font-weight: bold;
@@ -58,6 +63,8 @@ st.markdown("""
     .risk-medium:hover {
         box-shadow: 0 0 0 2px #ffe082;
     }
+    
+    /* Style for low-risk patients - green background */
     .risk-low {
         background-color: #c8e6c9;
         color: #1b5e20;
@@ -70,6 +77,8 @@ st.markdown("""
     .risk-low:hover {
         box-shadow: 0 0 0 2px #c8e6c9;
     }
+    
+    /* Style for email content - easy to read */
     .email-content {
         background-color: #f5f5f5;
         color: #222;
@@ -81,7 +90,8 @@ st.markdown("""
         line-height: 1.6;
         word-break: break-word;
     }
-    /* Dark mode support */
+    
+    /* Dark mode support for better accessibility */
     html[data-theme="dark"] .email-content, .dark .email-content {
         background-color: #23272f !important;
         color: #f5f5f5 !important;
@@ -106,12 +116,24 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 def load_patient_data():
-    """Load patient data from the JSON file."""
+    """Load the list of patients from our database.
+    
+    This reads the patient information from a JSON file that contains:
+    - Basic patient details
+    - Contact information
+    - Medical history
+    """
     with open("data/patients.json", "r") as f:
         return json.load(f)
 
 def load_risk_labels():
-    """Load risk assessment data."""
+    """Load the risk assessment results for each patient.
+    
+    This file contains:
+    - Risk level (HIGH/MEDIUM/LOW)
+    - Explanation of the risk assessment
+    - Recommended actions for each patient
+    """
     try:
         with open("output/risk_labels.json", "r") as f:
             risk_labels = json.load(f)
@@ -122,7 +144,13 @@ def load_risk_labels():
         return {}
 
 def load_summary():
-    """Load analysis summary."""
+    """Load the overall analysis summary.
+    
+    This summary includes:
+    - Key findings from the analysis
+    - Important trends in patient health
+    - Recommendations for the healthcare team
+    """
     try:
         with open("output/summary.md", "rb") as f:
             summary = f.read().decode('utf-8')
@@ -133,12 +161,19 @@ def load_summary():
         return "Summary file not found."
 
 def load_outreach_emails(valid_patient_names=None):
-    """Load all outreach email drafts."""
+    """Load all the personalized emails we've written for patients.
+    
+    Each email is stored in a separate file and includes:
+    - Personalized greeting
+    - Health information
+    - Recommended next steps
+    - Contact information
+    """
     emails = {}
     email_files = list(Path("output/emails").glob("*.txt"))
     print(f"[DEBUG] Email files found: {[str(f) for f in email_files]}")
     for email_file in email_files:
-        # Normalize filename to match patient name format
+        # Make sure the filename matches our patient name format
         name = email_file.stem.replace("_", " ")
         print(f"[DEBUG] Processing email file: {email_file}, normalized name: {name}")
         if (not valid_patient_names) or (name in valid_patient_names) or (email_file.stem in valid_patient_names):
@@ -148,7 +183,13 @@ def load_outreach_emails(valid_patient_names=None):
     return emails
 
 def get_risk_color(risk_level):
-    """Return CSS class for risk level."""
+    """Get the right color for showing a patient's risk level.
+    
+    We use different colors to make it easy to spot:
+    - HIGH risk: Red
+    - MEDIUM risk: Yellow
+    - LOW risk: Green
+    """
     return {
         "HIGH": "risk-high",
         "MEDIUM": "risk-medium",
@@ -156,9 +197,17 @@ def get_risk_color(risk_level):
     }.get(risk_level, "")
 
 def main():
+    """Run the main dashboard interface.
+    
+    This creates a user-friendly interface that shows:
+    1. A list of all patients
+    2. Summary statistics about their health
+    3. Risk assessments for each patient
+    4. Personalized emails we've written
+    """
     st.title("\U0001F3E5 HospitalGPT2 Dashboard")
     
-    # Sidebar for controls
+    # Add controls in the sidebar
     with st.sidebar:
         st.header("Controls")
         if 'analysis_done' not in st.session_state:
@@ -180,13 +229,13 @@ def main():
         if st.session_state.analysis_done:
             st.success("Analysis completed successfully!")
     
-    # Main content area
+    # Show the list of patients
     st.header("Patient List")
     patient_data = load_patient_data()
     patients = [entry["resource"] for entry in patient_data["entry"] 
                if entry["resource"]["resourceType"] == "Patient"]
     
-    # Create patient table
+    # Create a table showing patient information
     patient_table = []
     for patient in patients:
         name = f"{patient['name'][0]['given'][0]} {patient['name'][0]['family']}"
@@ -206,6 +255,7 @@ def main():
     
     st.dataframe(pd.DataFrame(patient_table), use_container_width=True)
 
+    # Show the summary of our analysis
     st.header("Summary Statistics")
     try:
         summary = load_summary()
@@ -219,7 +269,7 @@ def main():
         print(f"[DEBUG] Error loading summary: {str(e)}")
         st.info("Run the analysis to see summary statistics")
     
-    # Risk Levels Section
+    # Show risk assessments for each patient
     st.header("Risk Assessment")
     try:
         risk_labels = load_risk_labels()
@@ -232,7 +282,7 @@ def main():
                 "Actions": ", ".join(assessment.get("recommended_actions", []))
             })
         
-        # Display risk levels in a table with color coding
+        # Display each patient's risk level with color coding
         for risk in risk_data:
             col1, col2 = st.columns([1, 3])
             with col1:

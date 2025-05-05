@@ -6,21 +6,34 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
 class FHIRQueryHelper:
-    """Helper class for FHIR API queries and data parsing."""
+    """A helper class for working with FHIR medical data.
     
+    This class helps us:
+    - Connect to FHIR medical databases
+    - Get patient information
+    - Parse medical records
+    - Calculate important health metrics
+    """
+    
+    # The main FHIR server we're connecting to
     BASE_URL = "https://hapi.fhir.org/baseR4"
     
     @staticmethod
     def make_request(endpoint: str, params: Optional[Dict[str, str]] = None) -> Dict[str, Any]:
-        """
-        Make a request to the FHIR API.
+        """Get information from the FHIR server.
+        
+        This is how we talk to the medical database to get:
+        - Patient records
+        - Health conditions
+        - Test results
+        - Other medical information
         
         Args:
-            endpoint (str): API endpoint to query
-            params (Optional[Dict[str, str]]): Query parameters
+            endpoint: What kind of information we want (e.g., 'Patient', 'Condition')
+            params: Any filters or search terms we want to use
             
         Returns:
-            Dict[str, Any]: JSON response from the API
+            The medical data we asked for
         """
         url = f"{FHIRQueryHelper.BASE_URL}/{endpoint}"
         response = requests.get(url, params=params)
@@ -29,14 +42,18 @@ class FHIRQueryHelper:
     
     @staticmethod
     def parse_patient_name(patient: Dict[str, Any]) -> str:
-        """
-        Parse patient's full name from FHIR patient resource.
+        """Get a patient's full name from their medical record.
+        
+        FHIR stores names in a special format, so we need to:
+        1. Get their first name
+        2. Get their last name
+        3. Put them together properly
         
         Args:
-            patient (Dict[str, Any]): Patient resource from FHIR API
+            patient: The patient's medical record
             
         Returns:
-            str: Patient's full name
+            Their full name in a readable format
         """
         if 'name' not in patient or not patient['name']:
             return ""
@@ -47,14 +64,20 @@ class FHIRQueryHelper:
     
     @staticmethod
     def parse_patient_contact(patient: Dict[str, Any]) -> Dict[str, Optional[str]]:
-        """
-        Parse patient's contact information from FHIR patient resource.
+        """Get a patient's contact information.
+        
+        We look for:
+        - Email address
+        - Phone number
+        - Home address
+        
+        This helps us reach out to patients when needed.
         
         Args:
-            patient (Dict[str, Any]): Patient resource from FHIR API
+            patient: The patient's medical record
             
         Returns:
-            Dict[str, Optional[str]]: Dictionary containing email and other contact info
+            All their contact information in one place
         """
         contact_info = {
             'email': None,
@@ -81,14 +104,19 @@ class FHIRQueryHelper:
     
     @staticmethod
     def parse_patient_identifiers(patient: Dict[str, Any]) -> Dict[str, Optional[str]]:
-        """
-        Parse patient's identifiers from FHIR patient resource.
+        """Get a patient's medical record numbers and IDs.
+        
+        Every patient has:
+        - A Medical Record Number (MRN)
+        - Other IDs used by different healthcare systems
+        
+        This helps us make sure we're looking at the right patient.
         
         Args:
-            patient (Dict[str, Any]): Patient resource from FHIR API
+            patient: The patient's medical record
             
         Returns:
-            Dict[str, Optional[str]]: Dictionary containing MRN and other identifiers
+            All their medical IDs in one place
         """
         identifiers = {
             'mrn': None,
@@ -110,28 +138,37 @@ class FHIRQueryHelper:
     
     @staticmethod
     def calculate_age(birthdate: str) -> int:
-        """
-        Calculate age from birthdate.
+        """Figure out how old a patient is.
+        
+        We need to:
+        1. Take their birthdate
+        2. Compare it to today's date
+        3. Calculate their age in years
         
         Args:
-            birthdate (str): Birthdate in YYYY-MM-DD format
+            birthdate: When the patient was born (YYYY-MM-DD)
             
         Returns:
-            int: Age in years
+            How old they are in years
         """
         birth_date = datetime.strptime(birthdate, '%Y-%m-%d')
         return relativedelta(datetime.now(), birth_date).years
     
     @staticmethod
     def parse_condition(condition: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Parse condition information from FHIR condition resource.
+        """Get information about a patient's health condition.
+        
+        We look for:
+        - What the condition is
+        - When it started
+        - How serious it is
+        - Any special codes doctors use for it
         
         Args:
-            condition (Dict[str, Any]): Condition resource from FHIR API
+            condition: The medical record of their condition
             
         Returns:
-            Dict[str, Any]: Parsed condition information
+            All the important details about their condition
         """
         if 'code' not in condition or 'coding' not in condition['code']:
             return {}
@@ -147,15 +184,21 @@ class FHIRQueryHelper:
     
     @staticmethod
     def build_patient_summary(patient: Dict[str, Any], condition: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Build a comprehensive patient summary from patient and condition data.
+        """Create a complete summary of a patient's health.
+        
+        We put together:
+        - Their basic information
+        - Contact details
+        - Medical IDs
+        - Health conditions
+        - Links to their full records
         
         Args:
-            patient (Dict[str, Any]): Patient resource from FHIR API
-            condition (Dict[str, Any]): Condition resource from FHIR API
+            patient: Their basic medical record
+            condition: Information about their health condition
             
         Returns:
-            Dict[str, Any]: Comprehensive patient summary
+            A complete summary of their health situation
         """
         contact_info = FHIRQueryHelper.parse_patient_contact(patient)
         identifiers = FHIRQueryHelper.parse_patient_identifiers(patient)
@@ -171,28 +214,32 @@ class FHIRQueryHelper:
         }
 
 def openrouter_chat(messages: List[Dict[str, str]], model: str = "deepseek/deepseek-r1:free") -> str:
-    """
-    Make a direct API call to OpenRouter chat completions.
+    """Use AI to help write messages to patients.
+    
+    This function:
+    1. Connects to the OpenRouter AI service
+    2. Sends our message instructions
+    3. Gets back a well-written response
+    4. Makes sure the text is easy to read
     
     Args:
-        messages: List of message dictionaries with 'role' and 'content'
-        model: The model to use for completion
+        messages: What we want the AI to write about
+        model: Which AI model to use for writing
         
     Returns:
-        The generated response text
+        A well-written message ready to send to patients
     """
     try:
+        # Get our AI service key
         api_key = os.getenv("OPENROUTER_API_KEY")
         if not api_key:
-            raise ValueError("OPENROUTER_API_KEY environment variable not set")
+            raise ValueError("We need an OpenRouter API key to write messages")
         
-        # Validate API key format
+        # Make sure the key looks right
         if not api_key.startswith("sk-or-v1-"):
-            raise ValueError("Invalid OpenRouter API key format")
+            raise ValueError("This API key doesn't look right")
         
-        # Log first 10 characters of API key for debugging
-        print(f"[DEBUG] Using OpenRouter API key starting with: {api_key[:10]}...")
-        
+        # Connect to the AI service
         response = requests.post(
             "https://openrouter.ai/api/v1/chat/completions",
             headers={
@@ -208,13 +255,14 @@ def openrouter_chat(messages: List[Dict[str, str]], model: str = "deepseek/deeps
         )
         response.raise_for_status()
         result = response.json()
-        print(f"[DEBUG] OpenRouter API raw response: {result}")
+        
+        # Make sure we got a good response
         if 'choices' not in result or not result['choices']:
-            print(f"[ERROR] OpenRouter API response missing 'choices': {result}")
-            return "[ERROR] No response generated by OpenRouter API. Please check your API key, quota, or try again later."
+            return "Sorry, we couldn't generate a message right now. Please try again later."
+        
         response_text = result['choices'][0]['message']['content']
         
-        # Replace Unicode characters with plain text equivalents
+        # Make sure special characters show up right
         replacements = {
             '\u2264': '<=',  # less than or equal to
             '\u2265': '>=',  # greater than or equal to
@@ -232,5 +280,4 @@ def openrouter_chat(messages: List[Dict[str, str]], model: str = "deepseek/deeps
         return response_text
         
     except Exception as e:
-        print(f"[DEBUG] Error in openrouter_chat: {str(e)}")
-        return f"[ERROR] OpenRouter API call failed: {str(e)}" 
+        return f"Sorry, we had trouble writing the message: {str(e)}" 

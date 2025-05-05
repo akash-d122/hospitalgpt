@@ -2,21 +2,33 @@ from typing import Dict, List, Any, TypedDict
 from langgraph.graph import StateGraph, END
 from utils.query_helpers import FHIRQueryHelper, openrouter_chat
 
-# Define risk levels
+# Define what each risk level means for patients
 RISK_LEVELS = {
     "LOW": "Low risk - Regular monitoring recommended",
     "MEDIUM": "Medium risk - Increased monitoring and preventive measures recommended",
     "HIGH": "High risk - Immediate intervention recommended"
 }
 
-# Define the state type for our graph
 class RiskState(TypedDict):
+    """The current state of our risk assessment.
+    
+    This keeps track of:
+    - Messages between agents
+    - The patient data we're analyzing
+    - The risk assessments we're building
+    """
     messages: List[Dict[str, Any]]
     patient_data: Dict[str, Any]
     risk_assessment: Dict[str, Any]
 
 def get_patient_vitals(patient: Dict[str, Any]) -> Dict[str, str]:
-    """Extract patient vitals from extensions."""
+    """Get a patient's vital signs from their record.
+    
+    We look for:
+    - Blood pressure readings
+    - HbA1c levels (for diabetes)
+    - Cholesterol levels
+    """
     vitals = {}
     for ext in patient.get("extension", []):
         if "blood-pressure" in ext.get("url", ""):
@@ -28,7 +40,13 @@ def get_patient_vitals(patient: Dict[str, Any]) -> Dict[str, str]:
     return vitals
 
 def get_patient_conditions(patient_data: Dict[str, Any], patient_id: str) -> List[Dict[str, Any]]:
-    """Get all conditions for a specific patient."""
+    """Find all health conditions for a specific patient.
+    
+    This helps us understand:
+    - What conditions they have
+    - How severe each condition is
+    - How many conditions they're dealing with
+    """
     conditions = []
     for entry in patient_data["entry"]:
         if entry["resource"]["resourceType"] == "Condition":
@@ -38,10 +56,25 @@ def get_patient_conditions(patient_data: Dict[str, Any], patient_id: str) -> Lis
     return conditions
 
 def create_risk_assessor_agent() -> StateGraph:
-    """Create a risk assessor agent that evaluates patient health risks."""
+    """Create an agent that evaluates how at-risk each patient is.
+    
+    This agent:
+    1. Looks at each patient's health data
+    2. Checks their vital signs
+    3. Reviews their conditions
+    4. Determines their risk level
+    5. Suggests what to do next
+    """
     
     def assess_risk(state: RiskState) -> RiskState:
-        """Assess patient risk based on their data."""
+        """Evaluate how at-risk each patient is based on their health data.
+        
+        We consider:
+        - How many serious conditions they have
+        - Their vital signs
+        - Any concerning patterns
+        - What kind of follow-up they need
+        """
         risk_assessment = {}
         
         for entry in state["patient_data"]["entry"]:
@@ -49,32 +82,33 @@ def create_risk_assessor_agent() -> StateGraph:
                 patient = entry["resource"]
                 patient_id = patient["id"]
                 patient_name = f"{patient['name'][0]['given'][0]} {patient['name'][0]['family']}"
-                print(f"[DEBUG] Assessing risk for patient: {patient_name}")
+                print(f"Assessing risk for {patient_name}...")
                 
-                # Get patient's vitals
+                # Get the patient's vital signs
                 vitals = get_patient_vitals(patient)
                 
-                # Get patient's conditions
+                # Find all their health conditions
                 conditions = get_patient_conditions(state["patient_data"], patient_id)
                 
-                # Count severe conditions
+                # Count how many serious conditions they have
                 severe_conditions = sum(1 for c in conditions 
                                      if c.get("code", {}).get("coding", [{}])[0].get("severity") == "severe")
                 
-                # Count moderate conditions
+                # Count moderate conditions too
                 moderate_conditions = sum(1 for c in conditions 
                                        if c.get("code", {}).get("coding", [{}])[0].get("severity") == "moderate")
                 
-                # Evaluate vitals
+                # Check their vital signs
                 bp_systolic = int(vitals.get("blood_pressure", "0/0").split("/")[0])
                 hba1c = float(vitals.get("hba1c", "0"))
                 cholesterol = int(vitals.get("cholesterol", "0"))
                 
-                # Determine risk level based on conditions and vitals
+                # Start with low risk and adjust based on what we find
                 risk_level = "LOW"
                 explanation = []
                 recommended_actions = []
                 
+                # Check for multiple serious conditions
                 if severe_conditions >= 2 or (severe_conditions == 1 and moderate_conditions >= 2):
                     risk_level = "HIGH"
                     explanation.append("Multiple severe conditions present")
@@ -92,7 +126,7 @@ def create_risk_assessor_agent() -> StateGraph:
                         "Implement preventive measures"
                     ])
                 
-                # Add vitals-based risk factors
+                # Check blood pressure
                 if bp_systolic >= 160:
                     risk_level = "HIGH" if risk_level == "MEDIUM" else risk_level
                     explanation.append("Severely elevated blood pressure")
@@ -102,6 +136,7 @@ def create_risk_assessor_agent() -> StateGraph:
                     explanation.append("Elevated blood pressure")
                     recommended_actions.append("Blood pressure monitoring recommended")
                 
+                # Check diabetes control
                 if hba1c >= 9.0:
                     risk_level = "HIGH" if risk_level == "MEDIUM" else risk_level
                     explanation.append("Poorly controlled diabetes")
@@ -111,11 +146,13 @@ def create_risk_assessor_agent() -> StateGraph:
                     explanation.append("Suboptimal diabetes control")
                     recommended_actions.append("Diabetes management adjustment recommended")
                 
+                # Check cholesterol
                 if cholesterol >= 240:
                     risk_level = "MEDIUM" if risk_level == "LOW" else risk_level
                     explanation.append("Elevated cholesterol")
                     recommended_actions.append("Cholesterol management review recommended")
                 
+                # Save our assessment
                 risk_assessment[patient_name] = {
                     "risk_level": risk_level,
                     "explanation": " ".join(explanation),
@@ -125,22 +162,15 @@ def create_risk_assessor_agent() -> StateGraph:
         state["risk_assessment"] = risk_assessment
         return state
     
-    # Create the graph
+    # Set up our risk assessment workflow
     workflow = StateGraph(RiskState)
-    
-    # Add the risk assessment node
     workflow.add_node("assess", assess_risk)
-    
-    # Set the entry point
     workflow.set_entry_point("assess")
-    
-    # Set the exit point
     workflow.add_edge("assess", END)
-    
-    # Compile the graph
     return workflow.compile()
 
 if __name__ == "__main__":
+    # Example of how to run the risk assessment
     import json
     with open("data/patients.json", "r") as f:
         patient_data = json.load(f)
